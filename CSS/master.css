@@ -52,10 +52,10 @@ font-variation-settings:
     --clr-border-hover: #ff0000;
     --clr-border-hover-dm: #f4ce14;
 
-    --clr-yes-button: #f5f7f8;
+    --clr-button: #f5f7f8;
     --clr-yes-background: hsl(160, 47%, 40%);
     --clr-yes-background-hover: hsl(160, 47%, 30%);
-    --clr-no-button: #ffe8c5;
+    /* --clr-no-button: #ffe8c5; */
     --clr-no-background: hsl(0, 88%, 41%);
     --clr-no-background-hover: hsl(0, 88%, 30%);
 
@@ -853,7 +853,7 @@ hr {
 }
 .yes-button {
     background-color: var(--clr-yes-background);
-    color: var(--clr-yes-button);
+    color: var(--clr-button);
     transition: background-color 0.3s;
 }
 .yes-button:hover {
@@ -862,7 +862,7 @@ hr {
 
 .no-button {
     background-color: var(--clr-no-background);
-    color: var(--clr-no-button);
+    color: var(--clr-button);
     transition: background-color 0.3s;
 }
 .no-button:hover {
