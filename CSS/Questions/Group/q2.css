@@ -1,0 +1,44 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    background-color: black;
+    color: silver;
+}
+
+.main{
+    text-align: center;
+}
+
+#opening{
+    display: none;
+}
+
+#q-photo img{
+    width: 50%;
+    border-radius: 15px;
+}
+
+span{
+    color: gold;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+    text-shadow: 0px 0px 25px silver;
+}
+
+a:visited{
+    color: inherit;
+}
+
+a:hover{
+    color: gold;
+    text-shadow: 0px 0px 25px gold;
+    transition-duration: 0.5s;
+    transition-delay: 0ms;
+}
+
+footer{
+    text-align: center;
+}

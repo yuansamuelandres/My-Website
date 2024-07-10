@@ -1,0 +1,40 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+#ar-list{
+    direction: rtl;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:visited{
+    color: black;
+}
+
+.home a:hover{
+    text-decoration: underline;
+    color: white;
+    text-shadow: 0px 0px 25px white;
+    transition-duration: 0.5s;
+    transition-delay: 0s;
+}
+
+.f_projects a:hover{
+    text-decoration: underline;
+    color: black;
+    text-shadow: 0px 0px 25px white;
+    transition-duration: 0.5s;
+    transition-delay: 0s;
+}
+
+#about a:hover{
+    text-decoration: none;
+    color: #FFD700;
+    text-shadow: 0px 0px 25px #C0C0C0;
+    transition-duration: 0.5s;
+    transition-delay: 0s;
+}

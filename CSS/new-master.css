@@ -1,0 +1,445 @@
+/* In the name of Allah */
+
+/*
+todo: -Update the shadow perspective
+*/
+/******************** Global Styling "Start" ********************/
+/* div{
+    border: 1px solid red;
+} */
+
+:root{
+    scroll-behavior: smooth;
+    --clr-text: #687eff;
+    --clr-BlackBackground: #0f0f0f;
+
+    --ff: "Poppins", sans-serif;
+    --fw-regular: 400;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+    --fw-black: 900;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    color: silver;
+    background-color: black;
+    margin: 1rem 0;
+    font-family: var(--ff);
+    font-weight: var(--fw-semibold);
+}
+
+.container{
+    display: grid;
+    grid-template-areas: 
+        'Header'
+        'Content'
+        'Footer';
+    /* justify-items: center; */
+    /* height: 100vh; */
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+ul{
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+}
+
+hr{
+    width: 100%;
+}
+
+section {
+    text-align: justify;
+    color: silver;
+    font-size: 2rem;
+}
+/******************** Global Styling "End" ********************/
+
+
+
+/******************** Header Styling "Start" ********************/
+.header{
+    grid-area: Header;
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: small;
+}
+
+.header .logo{
+    width: 10%;
+}
+.header .logo img{
+    height: auto;
+    vertical-align: middle;
+    font-style: italic;
+}
+.header .logo a{
+    font-family: system-ui;
+}
+
+.header .nav{
+    text-align: center;
+}
+.header .nav > *{
+    padding: 0 0.15rem;
+}
+.header .nav a:hover{
+    text-shadow: 0 0 1.5rem silver;
+    transition-delay: 0ms;
+    transition-duration: 0.4s;
+}
+
+
+
+@media (min-width: 600px){
+    .header{
+        font-size: inherit;
+    }
+    .header .nav{
+        width: 50%;
+        
+    }
+    .header .nav > *{
+        padding: 0 0.5rem;
+    }
+}
+/******************** Header Styling "End" ********************/
+
+
+
+/******************** Main Styling "Start" ********************/
+.content{
+    grid-area: Content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-0{
+    text-align: center;
+    padding-block: 1rem;
+    max-width: 100%;
+}
+.card-0 img {
+    /* display: block; */
+    border-radius: 2.5rem;
+    max-width: 65%;
+    animation: focus 2.5s forwards;
+}
+@keyframes focus {
+    100%{
+        box-shadow: 0rem 0rem 1.5rem 0.5rem silver;
+    }
+}
+
+/*TODO: Reveal Effect */
+.welcome{
+    text-align: center;
+    color: hsl(0 0% 100% / 0.2);
+}
+/* .welcome > h1{
+}
+.welcome h1:has(span){
+} */
+.welcome span{
+    color: gold;
+    text-shadow: 0 0 17px gold;
+}
+
+.planet{
+    margin-block: 5rem;
+    width: 15em;
+    height: 15em;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 5em 0 gold;
+        /* 0 0 20em 5em gold, */
+        /* 0 0 55em 10em white */
+    position: relative;
+}
+
+.satellite, .satellite::after{
+    content: "";
+    position: absolute;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+}
+.satellite{
+    background-color: silver;
+    box-shadow: -2em 0 5em -1em white;
+    overflow: hidden;
+    transition: 250ms;
+    left: 32em;
+    transform: rotate(20deg);
+    animation: round 5s infinite ease-in-out;
+}
+.satellite::after{
+    background-color: black;
+    width: 2.5em;
+    left: 2.5em;
+    box-shadow: 0 0 0.75em 0.95em black;
+    animation: shadow 5s infinite linear;
+}
+@keyframes shadow{              /*! The Shadow Perspective*/  /*TODO: Medium size*/
+    0%{
+        width: 2.5em;
+        left: -1.25em;
+    }
+    25%{
+        width: 5em;
+        left: -1.25em;
+    }
+    50%{
+        width: 2.5em;
+        left: 2.5em;
+    }
+    75%{
+        width: 0em;
+        left: 5em;
+    }
+    80%{
+        left: 0;
+        box-shadow: 0 0 0.55em 0.75em black;
+    }
+    100%{
+        width: 2.5em;
+        left: -1.25em;
+    }
+}
+@keyframes round{
+    0%,
+    100%{
+        top: 2em;
+        left: -15em;
+        box-shadow: -2em 0 5em 0.5em rgba(255, 215, 0, 0.3);
+        z-index: 2;
+    }
+    25%{
+        box-shadow: 0 0 3em 1em rgba(255, 215, 0, 0.5);
+    }
+    75%{
+        box-shadow: 0 0 3em 1em black;
+    }
+    48%{
+        z-index: 2;
+    }
+    50%{
+        left: 40em;
+        top: 10em;
+        z-index: -1;
+        box-shadow: 2em 0 5em 0.5em rgba(255, 215, 0, 0.4);
+    }
+    99%{
+        z-index: -1;
+    }
+}
+
+.parent-cards{
+    width: 100%;
+    margin-block: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    text-align: center;
+    color: var(--clr-text);
+}
+
+.parent-cards > *:hover {
+    border-top: 2px solid var(--clr-text);
+}
+
+.parent-cards > div{
+    background-color: var(--clr-BlackBackground);
+    border-radius: 2rem 2rem 2rem 2rem;
+}
+.parent-cards div{
+    padding: 0.5rem;
+}
+.parent-cards h2{
+    margin-top: 0.5rem;
+}
+
+.parent-cards li{
+    list-style-type: none;
+}
+.parent-cards a{
+    text-decoration: underline;
+}
+
+
+
+@media (max-width: 850px) {
+    .card-0 {
+        margin-block-start: 1rem;
+        margin-block-end: 1rem;
+    }
+    .card-0 img {
+        max-width: 85%;
+    }
+    .parent-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 650px){
+    .parent-cards {
+        grid-template-columns: 1fr;
+    }
+}
+/******************** Main Styling "End" ********************/
+
+
+
+/******************** Footer Styling "Start" ********************/
+.footer{
+    grid-area: Footer;
+    text-align: center;
+    margin-block: 2rem;
+}
+
+.footer .links{
+    color: white;
+}
+
+.links li:hover {
+    text-shadow: 0 0 1rem white;
+}
+
+.footer h3{
+    font-family: 'Times New Roman';
+    margin-top: 2.5rem;
+}
+
+.footer ul{
+    display: inline-flex;
+    gap: 1rem;
+    justify-content: space-evenly;
+}
+.footer li{
+    list-style-type: none;
+}
+
+.footer input{
+    min-width: 30%;
+}
+.footer button{
+    border: 1 transparent black;
+    font-family: system-ui;
+    font-weight: bold;
+    /* padding-top: 0;
+    padding-bottom: 0; */
+}
+
+
+
+@media (max-width: 650px){
+    .footer ul{
+        flex-wrap: wrap;
+    }
+    .footer li{
+        width: calc(100% / 4);
+    }
+}
+/******************** Footer Styling "End" ********************/
+
+
+
+
+
+
+/******************** Media Queries Section "Start" ********************/
+    /* .parent-cards *::after{
+        content: "";
+        position: absolute;
+        width: 7px;
+        height: 100%;
+        right: -14px;
+        top: 0;
+        background-color: green;
+    }     */
+
+@media (max-width: 1050px){
+    .planet{
+        width: 5em;
+        height: 5em;
+    }
+    .satellite, .satellite::after{
+        width: 1em;
+        height: 1em;
+    }
+    .satellite{
+        left: 11em;
+        transform: rotate(17deg);
+    }
+    .satellite::after{
+        width: 1em;
+        left: 1em;
+    }
+    @keyframes shadow{          /*! The Shadow Perspective*/ /*TODO: Medium size*/
+        0%{
+            width: 1em;
+            left: -0.25em;
+        }
+        25%{
+            width: 2em;
+            left: 0em;
+        }
+        50%{
+            width: 1em;
+            left: 1em;
+        }
+        75%{
+            width: 0em;
+            left: 2em;
+        }
+        80%{
+            left: 0;
+            box-shadow: 0 0 0.55em 0.75em #262938;
+        }
+        100%{
+            width: 1em;
+            left: -0.25em;
+        }
+    }
+    @keyframes round{
+        0%,
+        100%{
+            top: -1em;
+            left: -9em;
+            box-shadow: -2em 0 5em 0.5em rgba(255, 215, 0, 0.3);
+            z-index: 2;
+        }
+        25%{
+            box-shadow: 0 0 3em 1em rgba(255, 215, 0, 0.5);
+        }
+        75%{
+            box-shadow: 0 0 3em 1em black;
+        }
+        48%{
+            z-index: 2;
+        }
+        50%{
+            left: 13em;
+            top: 4.5em;
+            z-index: -1;
+            box-shadow: 2em 0 5em 0.5em rgba(255, 215, 0, 0.4);
+        }
+        99%{
+            z-index: -1;
+        }
+    }
+}

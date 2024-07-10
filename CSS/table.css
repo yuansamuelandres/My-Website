@@ -1,0 +1,132 @@
+/* In the name of Allah */
+
+/******************** Global Styling "Start" ********************/
+html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+}
+
+body{
+    color: silver;
+    /* background-color: black; */
+    font-family: system-ui;
+    font-weight: bold;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    margin: 0.5rem;
+}
+/******************** Global Styling "End" ********************/
+
+
+
+/******************** Header Styling "Start" ********************/
+.nav ul{
+    list-style-type: none;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+}
+li{
+    display: inline-block;
+    padding: 0 25px 12.5px 25px;
+}
+
+li a{
+    text-decoration: none;
+    color: black;
+    background-color: #5f7adb;
+    padding: 3px;
+    border-radius: 10px;
+}
+/******************** Header Styling "End" ********************/
+
+
+
+.nav,
+.container{
+    /* background-color: red; */
+    max-width: 100%;
+    text-align: center;
+}
+
+
+
+/******************** Main Styling "Start" ********************/
+h1{
+    text-transform: uppercase;
+    text-align: left;
+    margin: 0;
+}
+
+img{
+    max-width: 35%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+    border-radius: 17px;
+}
+
+table{
+    border-collapse: collapse;
+    background-color: rgba(38, 41, 43, 1);
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1000px;
+    /* text-align: center; */
+    background-image: linear-gradient(to bottom, rgba(38,41,43,1), black);
+    /* color: black; */
+    text-shadow: 0 0 7px black;
+}
+
+th,
+td{
+    padding: 1rem;
+    text-align: center;
+}
+#sub{
+    text-align: left;
+}
+
+th{
+    background: hsl(0 0% 0% / 0.9);
+    color: silver;
+}
+
+tr:nth-of-type(2n){
+    background: hsl(0 0% 0% / 0.25);
+}
+/******************** Main Styling "End" ********************/
+
+
+
+/******************** Media Queries Section "Start" ********************/
+/*
+TODO: Main Part
+*/
+@media (max-width:650px){
+    table{
+        background-image: unset;
+    }
+
+    th{
+        display: none;
+    }
+    td{
+        display: grid;
+        grid-template-columns: 10ch auto;
+        padding: 0.5rem 1rem;
+        /* gap: 30px; */
+    }
+
+    td::before{
+        content: attr(data-cell) ": ";
+        font-weight: 1000;
+    }
+    td:first-child{
+        padding-top: 2rem;
+    }
+    td:last-child{
+        padding-bottom: 2rem;
+    }
+}
+/******************** Media Queries Section "End" ********************/

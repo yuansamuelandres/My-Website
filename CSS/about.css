@@ -1,0 +1,284 @@
+/*By the name of Allah*/
+
+/******************** Global Styling "Start" ********************/
+/* div{
+    border: 1px solid red;
+} */
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: silver;
+}
+
+ul{
+    padding-left: 0;
+}
+
+a{
+    text-decoration: none;
+}
+a:visited{
+    color: inherit;
+}
+
+.header,
+.main, 
+.footer{
+    max-width: 1250px;
+    width: fit-content;
+    margin: 0 auto;
+}
+/******************** Global Styling "Start" ********************/
+
+
+
+/******************** Header Styling "Start" ********************/
+.opening{
+    display: none;
+}
+
+#logo{
+    display: inline;
+}
+#logo img{
+    max-width: 100px;
+    vertical-align: middle;
+    /* opacity: .1; */
+}
+
+.nav{
+    display: inline;
+}
+.nav a{
+    color: whitesmoke;
+    text-shadow: 3px 3px 3px black;
+}
+nav{
+    display: inline;
+}
+.nav ul{
+    display: inline;
+    list-style-type: none;
+}
+.nav li{
+    display: inline;
+    padding: 7px 30px 7px 30px;
+    margin-left: 150px;
+    background-color: #1F4172;
+    border-radius: 15px;
+    color: whitesmoke;
+}
+.nav li:hover{
+    background-color: black;
+}
+/* .nav a:hover{
+    color: black;
+    text-shadow: 1px 1px 3px black;
+} */
+/******************** Header Styling "End" ********************/
+
+
+
+/******************** Main Styling "Start" ********************/
+.main{
+    margin: 75px auto 75px auto;
+    border-radius: 25px;
+}
+
+#ME{
+    text-align: center;
+    border-radius: 25px;
+}
+#img-me{
+    margin: 0 auto;
+    max-width: 700px;
+    border-radius: 25px;
+}
+img{
+    width: 100%;
+    border-radius: 25px;
+}
+
+#silver{
+    color: silver;
+    text-shadow: 0 0 25px silver;
+}
+#king{
+    color: gold;
+    text-shadow: 0 0 25px gold;
+    display: block;
+    margin-top: 25px;
+}
+/******************** Main Styling "End" ********************/
+
+
+
+/******************** Footer Styling "Start" ********************/
+.footer{
+    position: absolute;
+    /* top: calc(100% + 370px); */
+    left: 0px;
+    right: 0;
+    /* margin-top: 75px; */
+    /* width: calc(100%); */
+    height: 500px;
+    background-image: url(../Pictures/footer-background.avif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0%;
+    color: #eeeeee;
+    /* text-shadow: 1px 1px 5px black; */
+    border-radius: 25px;
+}
+.footer a{
+    color: inherit;
+}
+h3{
+    font-family: 'Times New Roman', Times, serif;
+    margin: 50px;
+}
+input{
+    vertical-align: middle; 
+    height: 23px; 
+    border: 0; 
+    padding-top: 1px; 
+    padding-bottom: 1px;
+}
+.form,
+.links{
+    padding: 15px;
+    text-align: center;
+    /* position: relative; */
+    /* top: calc(50% - 60px); */
+}
+.form button{
+    border: 0px solid #041562;
+    vertical-align: middle;
+    color: #da1212;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: #041562;
+    height: 25px;
+    width: 75px;
+    display: inline;
+}
+#email{
+    padding: 3px;
+    max-width: 180px;
+    font-family: 'Courier New', Courier, monospace;
+}
+label,
+#email{
+    height: 19px;
+}
+.footer .links{
+    background-image: url(../Pictures/footer-background.avif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0%;
+    margin: 50px;
+    border-radius: 25px;
+    text-align: center;
+    position: relative;
+    top: calc(50% - 185px);
+}
+.links li{
+    display: inline;
+    padding: 25px;
+}
+.home{
+    border: 0;
+    background-color: #0F0F0F;
+    color: whitesmoke;
+    padding: 15px;
+    border-radius: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    position: relative;
+    left: calc(100% - 124.5545px);
+    top: 425px;
+}
+/******************** Footer Styling "End" ********************/
+
+
+
+/******************** Media Queries Section "Start" ********************/
+/*
+TODO: Header Part
+*/
+@media (max-width:613px){
+    .nav ul{
+        /* border: 1px solid red; */
+        padding-inline-start: 15px;
+    }
+    
+    .nav li{
+        /* border: 1px solid green; */
+        padding: 3px;
+        margin-left: 0px;
+        margin-right:0px;
+        background-color: #1F4172;
+        border-radius: 15px;
+    }
+}
+@media (613px <= width <= 1013px){
+    /* .nav ul{
+        border: 1px solid red;
+    } */
+    .nav li{
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+}
+
+/*
+TODO: Main Part
+*/
+@media (max-width:613px){
+    #ME img{
+        max-width: 91%;
+    }
+}
+
+/*
+TODO: Footer Part
+*/
+@media (max-width:613px){
+    .footer .links{
+        margin: 30px;
+    }
+    .footer > .links li{
+        padding: 5px;
+        display: grid;
+        text-align: center;
+        align-self: center;
+    }
+}
+@media (max-width:613px){
+    .home{
+        left: 73%;
+        top: 25px;
+        background-image: url(../Pictures/ocean.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 0%;
+    }
+}
+@media (613px <= width <= 1013px){
+    .home{
+        top: 40px;
+        background-image: url(../Pictures/ocean.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 0%;
+    }
+}
+/******************** Media Queries Section "End" ********************/
