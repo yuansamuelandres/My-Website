@@ -119,12 +119,6 @@ body.dark-mode {
     border-radius: 1rem;
     transition: box-shadow 0.3s;
 }
-body.dark-mode .container .header,
-body.dark-mode .container .content,
-body.dark-mode .container .parent_cards,
-body.dark-mode .container .footer {
-    box-shadow: 0 0 0.25rem 0 silver;
-}
 
 a {
     color: inherit;
@@ -156,9 +150,7 @@ ul *:hover {
     top: 0;
     z-index: 100;
     background-color: hsla(360 100% 100% / 0.75);
-}
-body.dark-mode .header {
-    background-color: hsla(0 0 1 / 0.95);
+    transition: background-color 0.3s;
 }
 
 .header * {
@@ -191,21 +183,19 @@ ul * {
 
 .primary_nav li:nth-child(1) {
     background-color: var(--clr-red);
+    transition: background-color 0.3s;
 }
 .primary_nav li:nth-child(2) {
     background-color: var(--clr-d-orange);
+    transition: background-color 0.3s;
 }
 .primary_nav li:nth-child(3) {
     background-color: var(--clr-l-orange);
+    transition: background-color 0.3s;
 }
 .primary_nav li:nth-child(4) {
     background-color: var(--clr-yellow);
-}
-body.dark-mode .primary_nav li:nth-child(1),
-body.dark-mode .primary_nav li:nth-child(2),
-body.dark-mode .primary_nav li:nth-child(3),
-body.dark-mode .primary_nav li:nth-child(4) {
-    background-color: transparent;
+    transition: background-color 0.3s;
 }
 
 .primary_nav li:nth-child(1):hover {
@@ -227,10 +217,8 @@ body.dark-mode .primary_nav li:nth-child(4) {
 
 .header a:hover {
     text-shadow: 0.25rem 0.25rem 0.5rem black;
+    transition: text-shadow 0.3s;
     color: wheat;
-}
-body.dark-mode .header a:hover {
-    text-shadow: 0.25rem 0.25rem 0.5rem silver;
 }
 
 #theme-toggle {
@@ -246,19 +234,8 @@ body.dark-mode .header a:hover {
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url(../Pictures/light-mode.png);
-    transition: background-image 0.3s;
-}
-body.light-mode #theme-toggle {
+    transition: background-image 0.3s, color 0.3s, box-shadow 0.3s;
     color: black;
-}
-body.dark-mode #theme-toggle {
-    /* background-color: black; */
-    color: white;
-    border: 3px solid;
-    /* border-image-slice: 1;
-    border-image-source: linear-gradient(135deg, #ffffff, #666666); */
-    background-image: url(../Pictures/moon_15349878.png);
-    box-shadow: 0 0 0.25rem 0 #666666;
 }
 
 
@@ -320,10 +297,8 @@ body.dark-mode #theme-toggle {
 
 hr {
     border-color: black;
+    transition: border-color 0.3s;
     width: 90%;
-}
-body.dark-mode hr {
-    border-color: silver;
 }
 
 
@@ -433,9 +408,6 @@ body.dark-mode hr {
     -webkit-background-clip: text;
     color: transparent;
     transition: background-image 0.3s;
-}
-body.dark-mode .welcome h1 {
-    background-image: linear-gradient(90deg, silver, gold);
 }
 
 .the_h1 span {
@@ -734,9 +706,7 @@ body.dark-mode .welcome h1 {
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-}
-body.dark-mode .royalty {
-    background-image: linear-gradient(90deg, silver, gold);
+    transition: background-image 0.3s;
 }
 
 .parent_cards {
@@ -758,12 +728,6 @@ body.dark-mode .royalty {
 }
 .parent_cards > *:hover {
     border-left-color: var(--clr-border-hover);
-}
-body.dark-mode .parent_cards > * {
-    border-left-color: white;
-}
-body.dark-mode .parent_cards > *:hover {
-    border-left-color: var(--clr-border-hover-dm);
 }
 
 .parent_cards h2 {
@@ -793,28 +757,14 @@ body.dark-mode .parent_cards > *:hover {
 .card-1 li:nth-child(4) {
     background-color: var(--clr-q4);
 }
-body.dark-mode .parent_cards > * li:nth-child(n) {
-    background-color: unset;
-    background-image: none;
+.parent_cards > * li:nth-child(n) {
+    transition: background-color 0.3s, box-shadow 0.3s, text-shadow 0.3s;
 }
 
 .parent_cards > * li:nth-child(n):hover {
     box-shadow: 0 0 1rem 0 black;
     text-shadow: 0.25rem 0.25rem 0.5rem black;
 }
-body.dark-mode .card-1 li:nth-child(1):hover {
-    box-shadow: 0 0 0.5rem 0 var(--clr-q1);
-}
-body.dark-mode .card-1 li:nth-child(2):hover {
-    box-shadow: 0 0 0.5rem 0 var(--clr-q2);
-}
-body.dark-mode .card-1 li:nth-child(3):hover {
-    box-shadow: 0 0 0.5rem 0 var(--clr-q3);
-}
-body.dark-mode .card-1 li:nth-child(4):hover {
-    box-shadow: 0 0 0.5rem 0 var(--clr-q4);
-}
-
 
 .card-6 li:nth-child(1) {
     background-color: var(--clr-c);
@@ -822,15 +772,6 @@ body.dark-mode .card-1 li:nth-child(4):hover {
 }
 .card-6 li:nth-child(2) {
     background-image: linear-gradient(90deg, var(--clr-html), var(--clr-css), var(--clr-js));
-}
-body.dark-mode .card-6 li:nth-child(1):hover {
-    box-shadow: 0 0 0.5rem 0 var(--clr-c);
-}
-body.dark-mode .card-6 li:nth-child(2):hover {
-    box-shadow: 
-        0 0 0.5rem 0 var(--clr-html),
-        0 0 0.5rem 0 var(--clr-css),
-        0 0 0.5rem 0 var(--clr-js);
 }
 
 
@@ -890,12 +831,9 @@ body.dark-mode .card-6 li:nth-child(2):hover {
     background-repeat: no-repeat;
     color: white;
     overflow: hidden;
+    transition: background-position 0.3s;
 
     --border-radius-icon: 0.5rem;
-}
-body.dark-mode .footer {
-    /* background-image: url(../Pictures/background.jpg); */
-    background-position: 0%;
 }
 
 .contact-choice {
@@ -911,9 +849,7 @@ body.dark-mode .footer {
     border-radius: 0.5rem;
     padding: 0.25rem 0.75rem;
     font-weight: var(--fw-semibold);
-}
-body.dark-mode .button {
-    border: 0;
+    transition: border ;
 }
 .yes-button {
     background-color: var(--clr-yes-background);
@@ -923,12 +859,7 @@ body.dark-mode .button {
 .yes-button:hover {
     background-color: var(--clr-yes-background-hover);
 }
-body.dark-mode .yes-button:hover {
-    background-color: var(--clr-yes-background-hover);
-}
-body.dark-mode .no-button:hover {
-    background-color: var(--clr-no-background-hover);
-}
+
 .no-button {
     background-color: var(--clr-no-background);
     color: var(--clr-no-button);
@@ -936,10 +867,6 @@ body.dark-mode .no-button:hover {
 }
 .no-button:hover {
     background-color: var(--clr-no-background-hover);
-}
-body.dark-mode .yes-button,
-body.dark-mode .no-button {
-    background-color: black;
 }
 
 .footer ul {
@@ -983,16 +910,6 @@ body.dark-mode .no-button {
     transition: background-color 0.3s;
 }
 
-body.dark-mode .facebook,
-body.dark-mode .instagram,
-body.dark-mode .telegram,
-body.dark-mode .tiktok, 
-body.dark-mode .twitter,
-body.dark-mode .whatsapp {
-    background-color: unset;
-    transition: background-color 0.3s;
-}
-
 .facebook:hover {
     background-color: var(--clr-facebook-hover);
 }
@@ -1012,6 +929,122 @@ body.dark-mode .whatsapp {
     background-color: var(--clr-whatsapp-hover);
 }
 
+
+
+@media (width>=600px) {
+    .footer ul > * {
+        max-width: 3.5rem;
+    }
+}
+/******************** Footer Styling "End" ********************/
+
+
+
+/******************** Dark Mode Styling ********************/
+body.dark-mode .container .header,
+body.dark-mode .container .content,
+body.dark-mode .container .parent_cards,
+body.dark-mode .container .footer {
+    box-shadow: 0 0 0.25rem 0 silver;
+}
+
+body.dark-mode .header {
+    background-color: hsla(0 0 1 / 0.95);
+}
+
+body.dark-mode .primary_nav li:nth-child(1),
+body.dark-mode .primary_nav li:nth-child(2),
+body.dark-mode .primary_nav li:nth-child(3),
+body.dark-mode .primary_nav li:nth-child(4) {
+    background-color: transparent;
+}
+
+body.dark-mode .header a:hover {
+    text-shadow: 0.25rem 0.25rem 0.5rem silver;
+}
+
+body.dark-mode #theme-toggle {
+    /* background-color: black; */
+    color: white;
+    border: 3px solid;
+    /* border-image-slice: 1;
+    border-image-source: linear-gradient(135deg, #ffffff, #666666); */
+    background-image: url(../Pictures/moon_15349878.png);
+    box-shadow: 0 0 0.25rem 0 #666666;
+}
+
+body.dark-mode hr {
+    border-color: silver;
+}
+
+body.dark-mode .welcome h1 {
+    background-image: linear-gradient(90deg, silver, gold);
+}
+
+body.dark-mode .royalty {
+    background-image: linear-gradient(90deg, silver, gold);
+}
+
+body.dark-mode .parent_cards > * {
+    border-left-color: white;
+}
+body.dark-mode .parent_cards > *:hover {
+    border-left-color: var(--clr-border-hover-dm);
+}
+
+body.dark-mode .parent_cards > * li:nth-child(n) {
+    background-color: unset;
+    background-image: none;
+}
+
+body.dark-mode .card-1 li:nth-child(1):hover {
+    box-shadow: 0 0 0.5rem 0 var(--clr-q1);
+}
+body.dark-mode .card-1 li:nth-child(2):hover {
+    box-shadow: 0 0 0.5rem 0 var(--clr-q2);
+}
+body.dark-mode .card-1 li:nth-child(3):hover {
+    box-shadow: 0 0 0.5rem 0 var(--clr-q3);
+}
+body.dark-mode .card-1 li:nth-child(4):hover {
+    box-shadow: 0 0 0.5rem 0 var(--clr-q4);
+}
+
+body.dark-mode .card-6 li:nth-child(1):hover {
+    box-shadow: 0 0 0.5rem 0 var(--clr-c);
+}
+body.dark-mode .card-6 li:nth-child(2):hover {
+    box-shadow: 
+        0 0 0.5rem 0 var(--clr-html),
+        0 0 0.5rem 0 var(--clr-css),
+        0 0 0.5rem 0 var(--clr-js);
+}
+
+body.dark-mode .footer {
+    /* background-image: url(../Pictures/background.jpg); */
+    background-position: 0%;
+}
+
+body.dark-mode .yes-button,
+body.dark-mode .no-button {
+    background-color: black;
+}
+
+body.dark-mode .yes-button:hover {
+    background-color: var(--clr-yes-background-hover);
+}
+body.dark-mode .no-button:hover {
+    background-color: var(--clr-no-background-hover);
+}
+
+body.dark-mode .facebook,
+body.dark-mode .instagram,
+body.dark-mode .telegram,
+body.dark-mode .tiktok, 
+body.dark-mode .twitter,
+body.dark-mode .whatsapp {
+    background-color: unset;
+}
 body.dark-mode .facebook:hover {
     background-color: var(--clr-facebook-hover);
 }
@@ -1030,12 +1063,3 @@ body.dark-mode .twitter:hover {
 body.dark-mode .whatsapp:hover {
     background-color: var(--clr-whatsapp-hover);
 }
-
-
-
-@media (width>=600px) {
-    .footer ul > * {
-        max-width: 3.5rem;
-    }
-}
-/******************** Footer Styling "End" ********************/
