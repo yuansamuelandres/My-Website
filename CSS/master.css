@@ -608,7 +608,16 @@ hr {
 }
 
 .content {
-    width: 100%;
+    width: fit-content;
+}
+
+.content h2 {
+    display: none;
+    text-align: center;
+}
+
+.content h3 {
+    text-align: center;
 }
 
 
@@ -620,6 +629,15 @@ hr {
     .main .welcome {
         font-size: larger;
         width: 100%;
+    }
+
+    .content h3 {
+        display: none;
+    }
+
+    .content h2 {
+        display: block;
+        margin-block: 18.720px;
     }
 }
 
@@ -693,10 +711,6 @@ hr {
             z-index: -1;
         }
     }
-}
-
-.content {
-    padding: 0.25rem;
 }
 
 .royalty {
