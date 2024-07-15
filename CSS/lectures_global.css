@@ -8,7 +8,8 @@
 
 :root{
     /* --clr-bacground: #174d5a; */
-    --clr-text: #4c9a62;
+    --clr-text-sh: #4c9a62;
+    --clr-text-d: #ffb874;
 
     --ff: "Arial";
 }
@@ -27,7 +28,6 @@ body {
     margin-inline: auto;
     margin-block: 2.5%;
     background-color: black;
-    color: var(--clr-text);
     direction: rtl;
 }
 
@@ -38,6 +38,20 @@ a {
 }
 a:hover {
     color: gold;
+}
+
+
+/******************** Utility Classes ********************/
+.body-sh {
+    color: var(--clr-text-sh);
+}
+
+.body-d {
+    color: var(--clr-text-d);
+}
+
+.silver {
+    color: silver;
 }
 
 
@@ -61,7 +75,6 @@ h1,
 .container > * {
     padding: 1rem;
     border-radius: 1rem;
-    box-shadow: 0 0 0.75rem 0 var(--clr-text);
     transition: box-shadow 0.3s;
     justify-content: center;
     font-size: larger;
