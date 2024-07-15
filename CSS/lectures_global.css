@@ -8,6 +8,7 @@
 
 :root{
     /* --clr-bacground: #174d5a; */
+    --clr-text-t: #5f7adb;
     --clr-text-sh: #4c9a62;
     --clr-text-d: #ffb874;
 
@@ -42,6 +43,10 @@ a:hover {
 
 
 /******************** Utility Classes ********************/
+.body-t {
+    color: var(--clr-text-t);
+}
+
 .body-sh {
     color: var(--clr-text-sh);
 }
