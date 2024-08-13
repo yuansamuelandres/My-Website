@@ -74,7 +74,6 @@ h1,
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.25rem;
-    position: relative;
 }
 
 .container > * {
@@ -88,8 +87,12 @@ h1,
     box-shadow: 0 0 0.75rem 0 silver;
 }
 
+.container > .button-container {
+    box-shadow: none;
+    grid-column: 1/-1;
+}
+
 button {
-    position: absolute;
     font-weight: bolder;
     background-color: black;
     color: silver;
@@ -99,8 +102,6 @@ button {
     border-radius: 1rem;
     padding-inline: 0.75rem;
     padding-block: 0.5rem;
-    top: calc(100% - 2.5rem);
-    left: 0.5rem;
 }
 button:hover {
     box-shadow: 0 0 1.75rem 0 silver;
