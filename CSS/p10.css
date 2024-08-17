@@ -1,0 +1,266 @@
+/* In the name of Allah */
+
+material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+    }
+    
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+    
+:root {
+    --ff: "Poppins", sans-serif;
+    
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+    --fw-black: 900;
+    
+    --fs-n: normal;
+    --fs-i: italic;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* color-scheme: dark; */
+}
+
+
+
+/******************** Global Styling "Start" ********************/
+body{
+    margin-inline: 1.5%;
+    padding: 0;
+    font-family: var(--ff);
+    font-weight: var(--fw-medium);
+    transition: background-color 0.3s, color 0.3s;
+    /* background-image: linear-gradient(180deg, white, silver); */
+    background-color: black;
+    color: white;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    margin-block: 0;
+    padding-inline: 0;
+    list-style-type: none;
+}
+ul *:hover {
+    transition: box-shadow 150ms;
+}
+
+button {
+    border: 0;
+    cursor: pointer;
+    font-family: var(--ff);
+    /* font-size: var(--fw-regular); */
+    border-radius: 0.25rem;
+    /* background-color: silver; */
+}
+
+input {
+    border: 0;
+    padding: 0;
+}
+/******************** Global Styling "End" ********************/
+
+
+
+/******************** Header Styling "Start" ********************/
+h1 {
+    text-align: center;
+    color: #eee;
+}
+
+.span-silver {
+    color: silver;
+    text-shadow: 0 0 1rem silver;
+}
+
+.span-gold {
+    color: gold;
+    text-shadow: 0 0 1rem gold;
+}
+/******************** Header Styling "End" ********************/
+
+
+
+/******************** Main Styling "Start" ********************/
+.container {
+    margin-block-start: 5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+
+
+#shield,
+.program {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#shield {
+    z-index: 100;
+}
+
+#shield {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* gap: 2rem; */
+    align-items: center;
+    justify-content: center;
+    transition: display 1s;
+    /* display: none; */
+}
+
+#shield h1 {
+    /* padding-inline: 0.5rem; */
+    border-right: 1px solid;
+}
+
+#shield h2 {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    /* border-left: 1px solid; */
+    padding-inline: 0.5rem;
+}
+
+#shield h2 input, button {
+    align-self: center;
+    max-width: 50%;
+}
+
+#shield h2 input {
+    height: 1.5rem;
+    width: 5rem;
+}
+
+#shield h2 button {
+    padding: 0.25rem;
+}
+
+#shield .access {
+    font-size: medium;
+}
+
+
+
+#pre-program {
+    z-index: 1;
+    visibility: hidden;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    /* display: none; */
+}
+
+#pre-program label {
+    font-weight: var(--fw-bold);
+    font-size: xx-large;
+}
+
+#pre-program input {
+    margin-block-end: 0.75rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    align-self: center;
+    border-radius: 25%;
+}
+
+#pre-program input::placeholder {
+    text-align: center;
+}
+
+#pre-program button {
+    width: 3rem;
+    padding: 0.25rem;
+}
+
+
+
+#post-program {
+    /* background-color: red; */
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1.5fr;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin-block-end: 1rem;
+}
+
+#post-program label {
+    color: gold;
+}
+
+#post-program span {
+    color: silver;
+}
+
+#post-program input {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 25%;
+    background-color: black;
+    cursor: none;
+}
+
+.r {
+    color: gold;
+}
+
+.n {
+    color: silver;
+}
+
+.r input{
+    color: gold;
+    border: 1px solid gold;
+    box-shadow: 0 0 0.75rem 0 gold;
+    text-align: center;
+    font-size: larger;
+}
+
+.n input{
+    color: silver;
+    border: 1px solid silver;
+    box-shadow: 0 0 0.75rem 0 silver;
+    text-align: center;
+    font-size: larger;
+}
+
+.r, .n {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: larger;
+}
+
+.choice {
+    text-align: center;
+    margin-block-start: 2rem;
+    justify-self: center;
+    background-color: #264de4;
+    color: #eee;
+    font-weight: bold;
+    padding: 0.5rem;
+}
