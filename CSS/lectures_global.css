@@ -92,6 +92,14 @@ h1,
     grid-column: 1/-1;
 }
 
+.container > .table {
+    color: silver;
+    box-shadow: 0 0 1.75rem 0 silver;
+}
+.container > .table:hover {
+    box-shadow: 0 0 1.75rem 0 gold;
+}
+
 button {
     font-weight: bolder;
     background-color: black;
@@ -122,10 +130,5 @@ button a:hover {
         grid-column: 1/-1;
         width: 65%;
         justify-self: center;
-        color: silver;
-        box-shadow: 0 0 1.75rem 0 silver;
-    }
-    .container > .table:hover {
-        box-shadow: 0 0 1.75rem 0 gold;
     }
 }
