@@ -118,4 +118,14 @@ button a:hover {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
     }
+    .container > .table {
+        grid-column: 1/-1;
+        width: 65%;
+        justify-self: center;
+        color: silver;
+        box-shadow: 0 0 1.75rem 0 silver;
+    }
+    .container > .table:hover {
+        box-shadow: 0 0 1.75rem 0 gold;
+    }
 }
