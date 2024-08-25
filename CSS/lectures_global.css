@@ -11,6 +11,7 @@
     --clr-text-t: #5f7adb;
     --clr-text-sh: #4c9a62;
     --clr-text-d: #ffb874;
+    --clr-text-hj: #4e91fd;
 
     --ff: "Arial";
 }
@@ -53,6 +54,10 @@ a:hover {
 
 .body-d {
     color: var(--clr-text-d);
+}
+
+.body-hj {
+    color: var(--clr-text-hj);
 }
 
 .silver {
