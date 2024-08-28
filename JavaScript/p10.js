@@ -8,17 +8,15 @@ let password = document.getElementById("password")
 let pass
 
 let verify = document.getElementById("verify")
-// console.log(verify)
 
 let shield = document.getElementById("shield")
 let access = document.querySelector(".access")
-// console.log(access)
 
 let program = document.getElementById("pre-program")
+let Program = document.getElementById("program")
 
 verify.addEventListener('click', function () {
     pass = password.value
-    // console.log(pass)
     if (pass === "andy") {
         access.textContent = "Access granted. Welcome, professor!"
         setTimeout(function () {
@@ -49,11 +47,9 @@ function randomQ (min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
+let message = document.createElement("div")
+program.appendChild(message)
 generate.addEventListener('click', function () {
-    let message1 = document.createElement("div")
-    message1.innerHTML = `Enter an integer number less than 6`
-    let message2 = document.createElement("div")
-    message2.innerHTML = `Enter a valid integer number`
     questions = number.value
     q = +questions
     // console.log(typeof questions)
@@ -61,14 +57,15 @@ generate.addEventListener('click', function () {
         intro.style.display = 'none'
         program.style.display = 'none'
         generator(q)
+        message.innerHTML = ""
     }
     else if (q > 5) {
-        message2.style.display = 'none'
-        program.appendChild(message1)
+        message.innerHTML = ""
+        message.innerHTML = "Enter an integer number less than 6"
     }
     else {
-        message1.style.display = 'none'
-        program.appendChild(message2)
+        message.innerHTML = ""
+        message.innerHTML = "Enter a valid integer number"
     }
 })
 
@@ -86,12 +83,16 @@ function generator (a) {
         divR.innerText = 'R'
         let R = document.createElement("input")
         R.setAttribute("type", "text")
+        R.readOnly = true
+        R.disabled = true
 
         let divN = document.createElement("div")
         divN.className = 'n'
         divN.innerText = 'N'
         let N = document.createElement("input")
         N.setAttribute("type", "text")
+        N.readOnly = true
+        N.disabled = true
 
         R.value = randomQ(1,10)
         N.value = randomQ(1,2)
@@ -102,32 +103,23 @@ function generator (a) {
         divN.appendChild(N)
         postProgram.appendChild(divN)
         
-        document.body.appendChild(postProgram)
+        Program.appendChild(postProgram)
         document.body.style.textAlign = 'center'
-        
-    }
-    let buttonChoice = document.createElement("button")
-    buttonChoice.className = 'choice'
-    buttonChoice.innerHTML = "Generate new questions?"
 
-    let feature = document.createElement("div")
-    feature.innerHTML = "This feature is not released yet. Coming soon."
-    document.body.appendChild(buttonChoice)
-    buttonChoice.addEventListener('click', function () {
-        buttonChoice.style.display = 'none'
-        document.body.appendChild(feature)
-        })
-    
+        if (i === a) {
+            let buttonChoice = document.createElement("button")
+            buttonChoice.className = 'choice'
+            buttonChoice.innerHTML = "Generate new questions?"
+            document.body.appendChild(buttonChoice)
+            generateNewQs(buttonChoice)
+        }
+    }
 }
 
-
-
-
-// document.write(`
-//     <div id="post-program">
-//         <label for="">Question <span class="hash">#${i}</span></label>
-//         <div class="r">R<input type="text" name="" id="r"></div>
-//         <div class="n">N<input type="text" name="" id="n"></div>
-//     </div>`)
-// }
-
+function generateNewQs (btn) {
+    btn.addEventListener("click", function (){
+        Program.innerHTML = ""
+        btn.remove()
+        program.style.display = "flex"
+    })
+}
