@@ -34,10 +34,22 @@ verify.addEventListener('click', function () {
 
 
 let number = document.getElementById("number")
+number.focus() === true
+number.style.textAlign = "center"
+number.style.fontSize = "larger"
+number.style.fontWeight = "bold"
 let questions
 let q
 
 let generate = document.getElementById("generate")
+
+let arrayOfQObjects = []
+let arrayOfQs = []
+
+if (localStorage.getItem("Quests")) {
+    arrayOfQObjects = JSON.parse(localStorage.getItem("Quests"))
+    arrayOfQs = JSON.parse(localStorage.getItem("Keys"))
+}
 
 let min, max
 function randomQ (min, max) {
@@ -97,23 +109,68 @@ function generator (a) {
         R.value = randomQ(1,10)
         N.value = randomQ(1,2)
 
-        postProgram.appendChild(label)
-        divR.appendChild(R)
-        postProgram.appendChild(divR)
-        divN.appendChild(N)
-        postProgram.appendChild(divN)
-        
-        Program.appendChild(postProgram)
+        checkArray()
         document.body.style.textAlign = 'center'
 
-        if (i === a) {
+        function checkArray () {
+            if (!arrayOfQs.includes(R.value + N.value) && arrayOfQs.length < 20) {
+                arrayOfQs.push(R.value + N.value)
+                addQToArray (R.value, N.value)
+                addQToPage ()
+                if (i === a) {addGenerateButton()}
+            } else if (arrayOfQs.length === 20) {
+                arrayOfQs = []
+                arrayOfQObjects = []
+                let message = document.createElement("div")
+                message.innerHTML = "You have finished a full cycle!"
+                Program.appendChild(message)
+                setTimeout(function () {
+                    message.innerHTML = ""
+                }, 2000)
+                i = a
+                addGenerateButton()
+            } else {
+                R.value = randomQ(1,10)
+                N.value = randomQ(1,2)
+                return checkArray(R.value, N.value)
+            }
+        }
+        function addQToPage () {
+            postProgram.appendChild(label)
+            divR.appendChild(R)
+            postProgram.appendChild(divR)
+            divN.appendChild(N)
+            postProgram.appendChild(divN)
+            
+            Program.appendChild(postProgram)
+        }
+        function addGenerateButton () {
             let buttonChoice = document.createElement("button")
             buttonChoice.className = 'choice'
             buttonChoice.innerHTML = "Generate new questions?"
             document.body.appendChild(buttonChoice)
+
             generateNewQs(buttonChoice)
         }
     }
+}
+
+
+
+function addQToArray (r, n) {
+    let quest = {
+        R: r,
+        N: n,
+    }
+    console.log(arrayOfQs)
+    arrayOfQObjects.push(quest)
+
+    addArrayToLocalStorage (arrayOfQObjects, arrayOfQs)
+}
+
+function addArrayToLocalStorage (arrayO, arrayQ) {
+    localStorage.setItem("Quests", JSON.stringify(arrayO))
+    localStorage.setItem("Keys", JSON.stringify(arrayQ))
 }
 
 function generateNewQs (btn) {
