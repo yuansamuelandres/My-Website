@@ -1,0 +1,151 @@
+/* In the name of Allah */
+
+/* div{
+    border: 1px solid red;
+} */
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+    }
+    
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+    
+:root {
+    --ff: "Poppins", sans-serif;
+    
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+    --fw-black: 900;
+    
+    --fs-n: normal;
+    --fs-i: italic;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* color-scheme: dark; */
+}
+
+
+
+/******************** Global Styling "Start" ********************/
+body {
+    background-color: black;
+    color: whitesmoke;
+    font-family: var(--ff);
+    font-weight: var(--fw-medium);
+    margin: 0;
+}
+/******************** Global Styling "End" ********************/
+
+
+
+/******************** Main Styling "Start" ********************/
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    max-width: 95%;
+    margin: 0 auto;
+
+    h1 {
+        display: none;
+    }
+
+    .app {
+        border-radius: 1rem;
+        background-color: #aaa;
+        margin-block-end: 1.5rem;
+        box-shadow: 0 0 1rem 0 #aaa;
+    }
+
+    .tasks > div {
+        background-color: #ccc;
+        box-shadow: 0 0 1rem 0 #aaa;
+        border-radius: 1.25rem;
+        font-weight: var(--fw-black);
+        width: 100%;
+    }
+
+    .tasks {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.25rem;
+        padding: 1.5rem;
+        border-radius: 1rem;
+    }
+
+    .app,
+    .tasks > div {
+        /* width: 50%; */
+        display: grid;
+        grid-template-columns: 4fr 1fr;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    h3 {
+        color: wheat;
+    }
+
+    input,
+    button {
+        border: 0;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        font-weight: var(--fw-semibold);
+    }
+
+    .tasks input[type="text"] {
+        outline: none;
+    }
+
+    input[type="submit"] {
+        background-color: #ccc;
+        box-shadow: 0 0 1rem 0 red;
+        cursor: pointer;
+    }
+    input[type="submit"]:active {
+        background-color: #bbb;
+    }
+
+    button {
+        background-color: red;
+        color: white;
+        cursor: pointer;
+    }
+    button:active {
+        background-color: #c41c1c;
+    }
+}
+
+@media(width >= 650px) {
+    .container{
+        h1 {
+            display: initial;
+        }
+        h2 {
+            display: none;
+        }
+    }
+
+    .tasks {
+        width: 75%;
+    }
+}
