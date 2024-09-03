@@ -46,9 +46,21 @@ let generate = document.getElementById("generate")
 let arrayOfQObjects = []
 let arrayOfQs = []
 
+let divQuestions = document.createElement("div")
+divQuestions.className = "history"
+divQuestions.style.cssText = `
+    display: none;
+    margin-block-start: 2rem;
+    border: solid silver`
+let historyArray = []
+let showHistory = document.querySelector(".show")
+let hideHistory = document.querySelector(".hide")
+hideHistory.style.display = "none"
+
 if (localStorage.getItem("Quests")) {
     arrayOfQObjects = JSON.parse(localStorage.getItem("Quests"))
     arrayOfQs = JSON.parse(localStorage.getItem("Keys"))
+    historyArray = JSON.parse(localStorage.getItem("Quests"))
 }
 
 let min, max
@@ -117,10 +129,15 @@ function generator (a) {
                 arrayOfQs.push(R.value + N.value)
                 addQToArray (R.value, N.value)
                 addQToPage ()
-                if (i === a) {addGenerateButton()}
+                if (i === a) {
+                    addGenerateButton() 
+                    addToHistory(R.value, N.value)
+                }
             } else if (arrayOfQs.length === 20) {
                 arrayOfQs = []
                 arrayOfQObjects = []
+                historyArray = []
+                localStorage.removeItem("History")
                 let message = document.createElement("div")
                 message.innerHTML = "You have finished a full cycle!"
                 Program.appendChild(message)
@@ -143,6 +160,9 @@ function generator (a) {
             postProgram.appendChild(divN)
             
             Program.appendChild(postProgram)
+
+            Program.appendChild(divQuestions)
+            
         }
         function addGenerateButton () {
             let buttonChoice = document.createElement("button")
@@ -162,7 +182,7 @@ function addQToArray (r, n) {
         R: r,
         N: n,
     }
-    console.log(arrayOfQs)
+    // console.log(arrayOfQs)
     arrayOfQObjects.push(quest)
 
     addArrayToLocalStorage (arrayOfQObjects, arrayOfQs)
@@ -178,5 +198,69 @@ function generateNewQs (btn) {
         Program.innerHTML = ""
         btn.remove()
         program.style.display = "flex"
+        showHistory.style.display = "none"
+        hideHistory.style.display = "none"
     })
 }
+
+function addToHistory () {
+    showHistory.style.display = "block"
+    historyArray = arrayOfQObjects
+    divQuestions.innerHTML = ""
+    console.log(historyArray)
+    for (let i = 0; i < arrayOfQObjects.length; i++) {
+        let Label = document.createElement("label")
+
+        let recitation = document.createElement("div")
+        recitation.innerText = `Recitation: `
+        recitation.className = "R"
+
+        let r = document.createElement("input")
+        r.readOnly = true
+        r.disabled = true
+        recitation.setAttribute("type", "text")
+        r.style.cssText = `
+            background-color: black;
+            color: gold;
+            text-align: center;
+            font-size: larger;
+            text-shadow: 0 0 0.5rem gold;`
+
+        let narration = document.createElement("div")
+        narration.innerHTML = `Narration: `
+        narration.className = "N"
+
+        let n = document.createElement("input")
+        n.readOnly = true
+        n.disabled = true
+        narration.setAttribute("type", "text")
+        n.style.cssText = `
+            background-color: black;
+            color: silver;
+            text-align: center;
+            font-size: larger;
+            text-shadow: 0 0 0.5rem silver;`
+
+        Label.innerHTML = `Question <span>#${i+1} => </span>`
+        divQuestions.appendChild(Label)
+
+        r.value = arrayOfQObjects[i].R
+        divQuestions.appendChild(recitation)
+        recitation.appendChild(r)
+
+        n.value = arrayOfQObjects[i].N
+        divQuestions.appendChild(narration)
+        narration.appendChild(n)
+    }
+}
+
+showHistory.addEventListener("click", function () {
+    divQuestions.style.display = "grid"
+    showHistory.style.display = "none"
+    hideHistory.style.display = "initial"
+})
+hideHistory.addEventListener("click", function () {
+    divQuestions.style.display = "none"
+    hideHistory.style.display = "none"
+    showHistory.style.display = "initial"
+})

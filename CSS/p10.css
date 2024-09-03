@@ -103,6 +103,13 @@ h1 {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
+
+    button[class="show"],
+    button[class="hide"] {
+        place-self: center;
+        margin-block-start: 1.5rem;
+        display: none;
+    }
 }
 
 
@@ -196,7 +203,8 @@ h1 {
 
 
 
-#post-program {
+#post-program,
+.history {
     /* background-color: red; */
     display: grid;
     grid-template-columns: 2fr 1.5fr 1.5fr;
@@ -206,11 +214,13 @@ h1 {
     margin-block-end: 1rem;
 }
 
-#post-program label {
+#post-program label,
+.history label {
     color: gold;
 }
 
-#post-program span {
+#post-program span,
+.history span {
     color: silver;
 }
 
@@ -222,15 +232,17 @@ h1 {
     cursor: none;
 }
 
-.r {
+.r,
+.R {
     color: gold;
 }
 
-.n {
+.n,
+.N {
     color: silver;
 }
 
-.r input{
+.r input {
     color: gold;
     border: 1px solid gold;
     box-shadow: 0 0 0.75rem 0 gold;
