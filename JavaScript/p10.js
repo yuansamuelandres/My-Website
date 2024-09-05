@@ -49,9 +49,7 @@ let arrayOfQs = []
 let divQuestions = document.createElement("div")
 divQuestions.className = "history"
 divQuestions.style.cssText = `
-    display: none;
-    margin-block-start: 2rem;
-    border: solid silver`
+    display: none;`
 let historyArray = []
 let showHistory = document.querySelector(".show")
 let hideHistory = document.querySelector(".hide")
@@ -131,7 +129,7 @@ function generator (a) {
                 addQToPage ()
                 if (i === a) {
                     addGenerateButton() 
-                    addToHistory(R.value, N.value)
+                    addToHistory()
                 }
             } else if (arrayOfQs.length === 20) {
                 arrayOfQs = []
@@ -204,7 +202,7 @@ function generateNewQs (btn) {
 }
 
 function addToHistory () {
-    showHistory.style.display = "block"
+    showHistory.style.display = "initial"
     historyArray = arrayOfQObjects
     divQuestions.innerHTML = ""
     console.log(historyArray)

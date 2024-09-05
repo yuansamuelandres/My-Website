@@ -203,9 +203,9 @@ h1 {
 
 
 
-#post-program,
-.history {
-    /* background-color: red; */
+#post-program {
+    max-width: 95%;
+    margin-inline: auto;
     display: grid;
     grid-template-columns: 2fr 1.5fr 1.5fr;
     gap: 1rem;
@@ -265,6 +265,46 @@ h1 {
     align-items: center;
     gap: 0.5rem;
     font-size: larger;
+    width: 100%;
+}
+
+.history {
+    max-width: 95%;
+    margin-inline: auto;
+    margin-block-start: 2rem;
+    padding-inline-start: 0.25rem;
+    border: solid silver;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+
+
+    .R, .N {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    input {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}
+@media (width >= 650px) {
+    .history,
+    #post-program {
+        gap: 1rem;
+        max-width: 75%;
+        /* background-color: red; */
+    }
+}
+@media (width >= 900px) {
+    .history,
+    #post-program {
+        max-width: 50%;
+    }
 }
 
 .choice {
