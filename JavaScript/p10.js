@@ -193,6 +193,7 @@ function addArrayToLocalStorage (arrayO, arrayQ) {
 
 function generateNewQs (btn) {
     btn.addEventListener("click", function (){
+        divQuestions.style.display = "none"
         Program.innerHTML = ""
         btn.remove()
         program.style.display = "flex"
