@@ -4,15 +4,23 @@
     <head>
         <meta charset="UTF-8">
         <meta name="description" content="Yuan Samuel Andrès">
-        <meta name="viewport" content="width=width-device, initial-scale=1.0">
-
-        <title>Yuan Samuel Andrès</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel="stylesheet" href="CSS/about.css">
+        <link rel="icon" href="Pictures/Banner.jpg" type="image/x-icon">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,300;1,400;1,500;1,600;1,700;1,900&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        
+        <script src="https://kit.fontawesome.com/ce5a272a9a.js" crossorigin="anonymous"></script>
+        <title>Yuan Samuel Andrès</title>
     </head>
 
     <body>
-        <header id="header">
+        <div class="container">
             <div class="header">
                 <div id="logo">
                     <a href="Pictures/Banner.jpg" target="_blank" title="Banner">
@@ -20,55 +28,119 @@
                     </a>
                 </div>
                 <div class="nav">
-                    <nav>
-                        <ul>
-                            <li><a href="index.html" target="_blank" title="Home Page">Home</a></li>
-                            <li><a href="HTML/table.html" target="_blank" title="Study Table">Study Table</a></li>
-                            <li><a href="#contact" title="Contact">Contact</a></li>
-                            <li><a href="about.html" target="_self" title="About him">About</a></li>
-                        </ul>
-                    </nav>
+                    <ul>
+                        <li><a href="index.html" target="_blank" title="Home Page">
+                            <span class="h">H</span>
+                            <span class="o">o</span>
+                            <span class="m">m</span>
+                            <span class="e">e</span></a>
+                        </li>
+                        <li><a href="#content" title="Content">Content</a></li>
+                        <li><a href="#contact" title="Contact">Contact</a></li>
+                    </ul>
                 </div>
-                <div class="opening">
+                <div id="opening">
                     <audio autoplay>
                         <source src="Music/TOF.mp3">
                     </audio>
                 </div>
             </div>
-        </header>
-
-        <div class="main" id="content">
-            <div id="ME">
-                <div id="img-me">
+            <div class="main">
+                <div id="me">
                     <a href="Pictures/ME.jpg" target="_blank" title="His Royal Higness">
                         <img src="Pictures/ME.jpg" alt="His Royal Higness" title="His Royal Higness">
                     </a>
+                    <h1>
+                        <span id="silver">His Royal Higness,</span>
+                        <br>
+                        <span id="gold">Yuan Samuel Andrès</span>
+                    </h1>
                 </div>
-                <h1>
-                    <span id="silver">His Royal Higness,</span>
-                    <br>
-                    <span id="king">King Yuan Samuel Andrès</span>
-                </h1>
+                <div id="content">
+                    <section class="welcome">
+                        <h3>Welcome!</h3>
+                        Hello there! I'm the developer of this website, and by all mean, welcome!
+                    </section>
+                    <hr>
+                    <section class="purpose">
+                        <h3>What is this website for?</h3>
+                        <p>I consider myself an ambassador of Knowledge,</p>
+                        <strong>that's why I built this website.</strong>
+                        <p><em>To contain all the knowledge I acquired.</em></p>
+                    </section>
+                    <hr>
+                    <section class="info">
+                        <h3>Who am I?</h3>
+                        Here's a few information about me:
+                        <p>
+                            <ul>
+                                <li>I'm a memorizer of The Holy Quran, and am studying The Minor Ten Recitations.</li>
+                                <li>I'm a junior student at the Science School.
+                                    <ul>
+                                        <li>My Major is Physics.</li>
+                                        <li>My degree is Bachelor's.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    I'm a programmer who has <strong><em>so far</em></strong> knowledge of coding in these languages:
+                                    <ul>
+                                        <li>HTML | Intermediate</li>
+                                        <li>CSS | Intermediate</li>
+                                        <li>C++ | Beginner.</li>
+                                        <li>JavaScript | Upper-beginner.</li>
+                                        <li>Python | Beginner.</li>
+                                    </ul>
+                                </li>
+                                <li>I love languages, and can speak (<em>or studying</em>):
+                                    <ul>
+                                        <li>Arabic | C2</li>
+                                        <li>English | C1</li>
+                                        <li>Spanish | B1</li>
+                                        <li>High Valyrian | A1</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </p>
+                    </section>
+                </div>
             </div>
-        </div>
-
-        <footer>
             <div class="footer" id="contact">
                 <div class="links">
-                    <h3>Social Media Accounts</h3>
+                    <h3>Social Media Accounts:</h3>
                 <ul>
-                    <li><a href="https://www.facebook.com/YuanSamuelAndres/" target="_blank">Facebook</a></li>
-                    <li><a href="https://www.instagram.com/yuansamuelandres/" target="_blank">Instagram</a></li>
-                    <li><a href="https://web.telegram.org/k/" target="_blank">Telegram</a></li>
-                    <li><a href="https://www.tiktok.com/@yuansamuelandres" target="_blank">Tiktok</a></li>
-                    <li><a href="https://twitter.com/yuan_255" target="_blank">Twitter</a></li>
-                    <li><a href="https://wa.me/201101578090" target="_blank">Whatsapp</a></li>
+                    <li class="facebook">
+                        <a href="https://www.facebook.com/YuanSamuelAndres?mibextid=ZbWKwL" target="_blank">
+                            <i class="fa-brands fa-facebook"></i> Facebook
+                        </a>
+                    </li>
+                    <li class="instagram">
+                        <a href="https://www.instagram.com/yuansamuelandres?igsh=ZHNvZHg5cnljZWlo" target="_blank">
+                            <i class="fa-brands fa-instagram"></i> Instagram
+                        </a>
+                    </li>
+                    <li class="telegram">
+                        <a href="https://web.telegram.org/a/#1107864105" target="_blank">
+                            <i class="fa-brands fa-telegram"></i> Telegram
+                        </a>
+                </li>
+                    <li class="tiktok">
+                        <a href="https://www.tiktok.com/@yuansamuelandres?_t=8ncHvbIelt2&_r=1" target="_blank">
+                            <i class="fa-brands fa-tiktok"></i> Tiktok
+                        </a>
+                    </li>
+                    <li class="twitter">
+                        <a href="https://x.com/Yuan_Smu_Andres" target="_blank">
+                            <i class="fa-brands fa-twitter"></i> Twitter
+                        </a>
+                    </li>
+                    <li class="whatsapp">
+                        <a href="https://wa.me/201101578090" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i> Whatsapp
+                        </a>
+                    </li>                
                 </ul>
                 </div>
             </div>
-            <button class="home">
-                <a href="#header" title="Back up">Back up</a>
-            </button>
-        </footer>
+        </div>
     </body>
 </html>
