@@ -75,15 +75,11 @@ generate.addEventListener('click', function () {
     questions = number.value
     q = +questions
     // console.log(typeof questions)
-    if (q <= 5 && q > 0) {
+    if (typeof q === "number" && q > 0) {
         intro.style.display = 'none'
         program.style.display = 'none'
         generator(q)
         message.innerHTML = ""
-    }
-    else if (q > 5) {
-        message.innerHTML = ""
-        message.innerHTML = "Enter an integer number less than 6"
     }
     else {
         message.innerHTML = ""
@@ -132,16 +128,11 @@ function generator (a) {
                     addToHistory()
                 }
             } else if (arrayOfQs.length === 20) {
+                addToHistory()
                 arrayOfQs = []
                 arrayOfQObjects = []
                 historyArray = []
-                localStorage.removeItem("History")
-                let message = document.createElement("div")
-                message.innerHTML = "You have finished a full cycle!"
-                Program.appendChild(message)
-                setTimeout(function () {
-                    message.innerHTML = ""
-                }, 2000)
+                window.alert("A full cycle is completed.")
                 i = a
                 addGenerateButton()
             } else {
@@ -206,7 +197,7 @@ function addToHistory () {
     showHistory.style.display = "initial"
     historyArray = arrayOfQObjects
     divQuestions.innerHTML = ""
-    console.log(historyArray)
+    // console.log(historyArray)
     for (let i = 0; i < arrayOfQObjects.length; i++) {
         let Label = document.createElement("label")
 
