@@ -65,9 +65,8 @@ button {
     border: 0;
     cursor: pointer;
     font-family: var(--ff);
-    /* font-size: var(--fw-regular); */
+    font-weight: var(--fw-medium);
     border-radius: 0.25rem;
-    /* background-color: silver; */
 }
 
 input {
@@ -156,12 +155,23 @@ h1 {
 
 #shield h2 input {
     height: 1.5rem;
-    width: 5rem;
+    width: 7.5rem;
+    border-radius: 5rem;
+    text-align: center;
 }
 
 #shield h2 button {
     padding: 0.25rem;
+    background-color: #0f0f0f;
+    color: #eee;
+    transition-duration: 0.25s;
+    border-radius: 0.5rem;
 }
+#shield h2 button:hover {
+    background-color: #eee;
+    color: #0f0f0f;
+}
+
 
 #shield .access {
     font-size: medium;
@@ -197,8 +207,11 @@ h1 {
 }
 
 #pre-program button {
-    width: 3rem;
     padding: 0.25rem;
+}
+#pre-program button:hover {
+    color: #eee;
+    background-color: #264de4;
 }
 
 
