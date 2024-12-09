@@ -113,75 +113,9 @@ h1 {
 
 
 
-#shield,
-.program {
-    grid-column: 1;
-    grid-row: 1;
-}
-
-#shield {
-    z-index: 100;
-}
-
-#shield {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    /* gap: 2rem; */
-    align-items: center;
-    justify-content: center;
-    transition: display 1s;
-    /* display: none; */
-}
-
-#shield h1 {
-    /* padding-inline: 0.5rem; */
-    border-right: 1px solid;
-}
-
-#shield h2 {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    justify-content: center;
-    /* border-left: 1px solid; */
-    padding-inline: 0.5rem;
-}
-
-#shield h2 input, button {
-    align-self: center;
-    max-width: 50%;
-}
-
-#shield h2 input {
-    height: 1.5rem;
-    width: 7.5rem;
-    border-radius: 5rem;
-    text-align: center;
-}
-
-#shield h2 button {
-    padding: 0.25rem;
-    background-color: #0f0f0f;
-    color: #eee;
-    transition-duration: 0.25s;
-    border-radius: 0.5rem;
-}
-#shield h2 button:hover {
-    background-color: #eee;
-    color: #0f0f0f;
-}
-
-
-#shield .access {
-    font-size: medium;
-}
-
-
-
 #pre-program {
     z-index: 1;
-    visibility: hidden;
+    /* visibility: hidden; */
     text-align: center;
     display: flex;
     flex-direction: column;

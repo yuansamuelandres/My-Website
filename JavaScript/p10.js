@@ -15,22 +15,6 @@ let access = document.querySelector(".access")
 let program = document.getElementById("pre-program")
 let Program = document.getElementById("program")
 
-verify.addEventListener('click', function () {
-    pass = password.value
-    if (pass === "andy") {
-        access.textContent = "Access granted. Welcome, professor!"
-        setTimeout(function () {
-            program.style.visibility = 'visible'
-            shield.style.display = 'none'}, 1000)
-    }
-    else if (pass === "") {
-        access.textContent = 'Enter a thing!'
-    }
-    else {
-        access.textContent = 'Access denied.'
-    }
-})
-
 
 
 let number = document.getElementById("number")
