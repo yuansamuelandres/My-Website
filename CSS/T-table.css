@@ -1,0 +1,63 @@
+/* In the name of Allah */
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+}
+
+*:before,
+*:after{
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+}
+
+h1 {
+    color: gold;
+    padding: 1.5rem;
+    text-align: center;
+    text-shadow: 0 0 1rem silver;
+    box-shadow: 0 0 1rem 0 silver;
+    margin-inline: auto;
+}
+
+.container {
+    max-width: 90%;
+    margin-inline: auto;
+    margin-block: 1rem;
+    border-radius: 1rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+#gallery {
+    max-width: 100%;
+    /* background-color: gray; */
+    border-radius: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+figure:nth-of-type(1) img {
+    border-radius: 1rem 0 0 0;
+}
+
+figure:nth-of-type(2) img {
+    border-radius: 0 1rem 0 0;
+}
+
+figure:nth-of-type(19) img {
+    border-radius: 0 0 0 1rem;
+}
+
+figure:nth-of-type(20) img {
+    border-radius: 0 0 1rem 0;
+}

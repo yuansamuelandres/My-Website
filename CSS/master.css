@@ -771,9 +771,12 @@ hr {
     background-color: var(--clr-q3);
 }
 .card-1 li:nth-child(4) {
-    background-color: var(--clr-q4);
+    background-color: gold;
 }
 .card-1 li:nth-child(5) {
+    background-color: var(--clr-q4);
+}
+.card-1 li:nth-child(6) {
     background-image: linear-gradient(90deg, var(--clr-q2), var(--clr-q3));
 }
 .parent_cards > * li:nth-child(n) {
@@ -1030,6 +1033,9 @@ body.dark-mode .card-1 li:nth-child(3):hover {
     box-shadow: 0 0 0.5rem 0 var(--clr-q3);
 }
 body.dark-mode .card-1 li:nth-child(4):hover {
+    box-shadow: 0 0 0.5rem 0 gold;
+}
+body.dark-mode .card-1 li:nth-child(5):hover {
     box-shadow: 0 0 0.5rem 0 var(--clr-q4);
 }
 

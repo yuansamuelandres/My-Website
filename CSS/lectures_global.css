@@ -60,6 +60,10 @@ a:hover {
     color: var(--clr-text-hj);
 }
 
+.body-T {
+    color: gold;
+}
+
 .silver {
     color: silver;
 }
