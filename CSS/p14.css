@@ -155,7 +155,7 @@ h1 {
     max-width: 95%;
     margin-inline: auto;
     display: grid;
-    grid-template-columns: 2fr 1.5fr 1.5fr;
+    grid-template-columns: 2fr 1.5fr 1.5fr 1.5fr;
     gap: 1rem;
     align-items: center;
     justify-content: center;
@@ -190,6 +190,11 @@ h1 {
     color: silver;
 }
 
+.b,
+.B {
+    color: red;
+}
+
 .r input {
     color: gold;
     border: 1px solid gold;
@@ -206,7 +211,15 @@ h1 {
     font-size: larger;
 }
 
-.r, .n {
+.b input{
+    color: red;
+    border: 1px solid red;
+    box-shadow: 0 0 0.75rem 0 red;
+    text-align: center;
+    font-size: larger;
+}
+
+.r, .n, .b {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -223,12 +236,13 @@ h1 {
     padding-inline-start: 0.25rem;
     border: solid silver;
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 0.5rem;
     justify-content: center;
     align-items: center;
 
 
-    .R, .N {
+    .R, .N, .B {
         display: flex;
         flex-direction: column;
         justify-content: center;

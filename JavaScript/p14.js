@@ -96,16 +96,33 @@ function generator (a) {
         N.readOnly = true
         N.disabled = true
 
+        let divB = document.createElement("div")
+        divB.className = 'b'
+        divB.innerText = 'B'
+        let B = document.createElement("input")
+        B.setAttribute("type", "text")
+        B.readOnly = true
+        B.disabled = true
+
         R.value = randomQ(1,10)
-        N.value = randomQ(1,2)
+        if (R.value === 5) {
+            N.value = randomQ(1,3)
+        } else {
+            N.value = randomQ(1,2)
+        }
+        if (R.value === 5 && N.value === 3) {
+            B.value = randomQ(1,3)
+        } else {
+            B.value = randomQ(1,4)
+        }
 
         checkArray()
         document.body.style.textAlign = 'center'
 
         function checkArray () {
-            if (!arrayOfQs.includes(R.value + N.value) && arrayOfQs.length < 20) {
-                arrayOfQs.push(R.value + N.value)
-                addQToArray (R.value, N.value)
+            if (!arrayOfQs.includes(R.value + N.value + B.value) && arrayOfQs.length < 20) {
+                arrayOfQs.push(R.value + N.value + B.value)
+                addQToArray (R.value, N.value, B.value)
                 addQToPage ()
                 if (i === a) {
                     addGenerateButton() 
@@ -121,8 +138,17 @@ function generator (a) {
                 addGenerateButton()
             } else {
                 R.value = randomQ(1,10)
-                N.value = randomQ(1,2)
-                return checkArray(R.value, N.value)
+                if (R.value === 5) {
+                    N.value = randomQ(1,3)
+                } else {
+                    N.value = randomQ(1,2)
+                }
+                if (R.value === 5 && N.value === 3) {
+                    B.value = randomQ(1,3)
+                } else {
+                    B.value = randomQ(1,4)
+                }
+                return checkArray(R.value, N.value, B.value)
             }
         }
         function addQToPage () {
@@ -131,6 +157,8 @@ function generator (a) {
             postProgram.appendChild(divR)
             divN.appendChild(N)
             postProgram.appendChild(divN)
+            divB.appendChild(B)
+            postProgram.appendChild(divB)
             
             Program.appendChild(postProgram)
 
@@ -150,10 +178,11 @@ function generator (a) {
 
 
 
-function addQToArray (r, n) {
+function addQToArray (r, n, b) {
     let quest = {
         R: r,
         N: n,
+        B: b,
     }
     // console.log(arrayOfQs)
     arrayOfQObjects.push(quest)
@@ -186,7 +215,7 @@ function addToHistory () {
         let Label = document.createElement("label")
 
         let recitation = document.createElement("div")
-        recitation.innerText = `Recitation: `
+        recitation.innerText = `Recitation`
         recitation.className = "R"
 
         let r = document.createElement("input")
@@ -201,7 +230,7 @@ function addToHistory () {
             text-shadow: 0 0 0.5rem gold;`
 
         let narration = document.createElement("div")
-        narration.innerHTML = `Narration: `
+        narration.innerHTML = `Narration`
         narration.className = "N"
 
         let n = document.createElement("input")
@@ -215,6 +244,21 @@ function addToHistory () {
             font-size: larger;
             text-shadow: 0 0 0.5rem silver;`
 
+        let branch = document.createElement("div")
+        branch.innerHTML = `Branch`
+        branch.className = "B"
+
+        let b = document.createElement("input")
+        b.readOnly = true
+        b.disabled = true
+        branch.setAttribute("type", "text")
+        b.style.cssText = `
+            background-color: black;
+            color: red;
+            text-align: center;
+            font-size: larger;
+            text-shadow: 0 0 0.5rem red;`
+
         Label.innerHTML = `Question <span>#${i+1} => </span>`
         divQuestions.appendChild(Label)
 
@@ -225,6 +269,13 @@ function addToHistory () {
         n.value = arrayOfQObjects[i].N
         divQuestions.appendChild(narration)
         narration.appendChild(n)
+
+        b.value = arrayOfQObjects[i].B
+        divQuestions.appendChild(branch)
+        branch.appendChild(b)
+        console.log(r.value)
+        console.log(n.value)
+        console.log(b.value)
     }
 }
 
@@ -238,3 +289,5 @@ hideHistory.addEventListener("click", function () {
     hideHistory.style.display = "none"
     showHistory.style.display = "initial"
 })
+
+// localStorage.clear()
