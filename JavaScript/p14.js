@@ -45,6 +45,10 @@ if (localStorage.getItem("Quests")) {
     historyArray = JSON.parse(localStorage.getItem("Quests"))
 }
 
+console.log(arrayOfQObjects)
+console.log(arrayOfQs)
+console.log(historyArray)
+
 let min, max
 function randomQ (min, max) {
     min = Math.ceil(min)
@@ -120,8 +124,8 @@ function generator (a) {
         document.body.style.textAlign = 'center'
 
         function checkArray () {
-            if (!arrayOfQs.includes(R.value + N.value + B.value) && arrayOfQs.length < 20) {
-                arrayOfQs.push(R.value + N.value + B.value)
+            if (!arrayOfQs.includes(R.value + N.value) && arrayOfQs.length < 20) {
+                arrayOfQs.push(R.value + N.value)
                 addQToArray (R.value, N.value, B.value)
                 addQToPage ()
                 if (i === a) {
