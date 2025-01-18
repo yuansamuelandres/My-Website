@@ -12,12 +12,36 @@
     --clr-text-sh: #4c9a62;
     --clr-text-d: #ffb874;
     --clr-text-hj: #4e91fd;
+    --clr-text-f: #ec6b5b;
 
     --ff: "Arial";
 }
 
 html {
     scroll-behavior: smooth;
+}
+
+
+
+/******************** Header Styling ********************/
+nav {
+    max-width: max-content;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 0.25rem 0 silver;
+    opacity: 0.5;
+    transition: box-shadow 0.3s, opacity 0.3s;
+    position: fixed;
+    top: 1.5rem;
+    right: 0.5rem;
+
+    img {
+        max-width: 2rem;
+    }
+}
+nav:hover {
+    box-shadow: 0 0 1rem 0 silver;
+    opacity: 1;
 }
 
 
@@ -64,6 +88,10 @@ a:hover {
     color: gold;
 }
 
+.body-f {
+    color: var(--clr-text-f);
+}
+
 .silver {
     color: silver;
 }
@@ -94,11 +122,6 @@ h1,
 }
 .container > *:hover {
     box-shadow: 0 0 0.75rem 0 silver;
-}
-
-.container > .button-container {
-    box-shadow: none;
-    grid-column: 1/-1;
 }
 
 .container > .table {
