@@ -18,7 +18,7 @@ let Program = document.getElementById("program")
 
 
 let number = document.getElementById("number")
-number.focus() === true
+number.value = '4'
 number.style.textAlign = "center"
 number.style.fontSize = "larger"
 number.style.fontWeight = "bold"
@@ -26,6 +26,7 @@ let questions
 let q
 
 let generate = document.getElementById("generate")
+generate.focus() = true
 
 let arrayOfQObjects = []
 let arrayOfQs = []
