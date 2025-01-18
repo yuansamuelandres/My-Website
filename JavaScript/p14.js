@@ -26,7 +26,7 @@ let questions
 let q
 
 let generate = document.getElementById("generate")
-generate.focus() = true
+generate.focus() === true
 
 let arrayOfQObjects = []
 let arrayOfQs = []
@@ -46,9 +46,9 @@ if (localStorage.getItem("Quests")) {
     historyArray = JSON.parse(localStorage.getItem("Quests"))
 }
 
-console.log(arrayOfQObjects)
-console.log(arrayOfQs)
-console.log(historyArray)
+// console.log(arrayOfQObjects)
+// console.log(arrayOfQs)
+// console.log(historyArray)
 
 let min, max
 function randomQ (min, max) {
