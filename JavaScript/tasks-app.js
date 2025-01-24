@@ -24,7 +24,10 @@ addFile.addEventListener("click", function () {
 divTasks.addEventListener("click", (e) => {
     if (e.target.classList.contains("delete")) {
         deleteTask(e.target.parentElement.getAttribute("id"))
-        e.target.parentElement.remove()
+        e.target.style.backgroundColor = 'green';
+        setTimeout(() => {
+            e.target.parentElement.remove();
+        }, 1500)
     }
 })
 
@@ -58,8 +61,9 @@ function addElementsToPage (a) {
         taskTitle.style.fontWeight = "900"
         tasks.appendChild(taskTitle)
         let removeFile = document.createElement("button")
-        removeFile.innerText = "Printed?"
+        removeFile.innerText = "Done?"
         removeFile.className = "delete"
+        // removeFile.style.backgroundColor = 'red'
         tasks.appendChild(removeFile)
     });
 }

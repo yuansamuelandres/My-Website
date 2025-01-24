@@ -58,7 +58,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    max-width: 95%;
+    max-width: 90%;
     margin: 0 auto;
 
     h1 {
@@ -67,14 +67,18 @@ body {
 
     .app {
         border-radius: 1rem;
-        background-color: #aaa;
+        background-color: #F6C794;
         margin-block-end: 1.5rem;
-        box-shadow: 0 0 1rem 0 #aaa;
+
+        input[type="text"] {
+            background-color: black;
+            color: #F6C794;
+        }
     }
 
     .tasks > div {
-        background-color: #ccc;
-        box-shadow: 0 0 1rem 0 #aaa;
+        background-color: #344CB7;
+        box-shadow: 0 0 1rem 0 #344CB7;
         border-radius: 1.25rem;
         font-weight: var(--fw-black);
         width: 100%;
@@ -88,6 +92,11 @@ body {
         gap: 1.25rem;
         padding: 1.5rem;
         border-radius: 1rem;
+
+        input[type="text"] {
+            background-color: black;
+            color: wheat;
+        }
     }
 
     .app,
@@ -117,25 +126,34 @@ body {
     }
 
     input[type="submit"] {
-        background-color: #ccc;
-        box-shadow: 0 0 1rem 0 red;
+        color: whitesmoke;
+        background-color: #344CB7;
         cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    input[type="submit"]:hover {
+        background-color: #000957;
+        color: white;
     }
     input[type="submit"]:active {
-        background-color: #bbb;
+        background-color: #09122C;
     }
 
     button {
-        background-color: red;
+        background-color: hsl(0, 100%, 50%);
+        transition: background-color 0.5s;
         color: white;
         cursor: pointer;
+    }
+    button:hover {
+        background-color: hsl(0, 100%, 35%);
     }
     button:active {
         background-color: #c41c1c;
     }
 }
 
-@media(width >= 650px) {
+@media(width >= 700px) {
     .container{
         h1 {
             display: initial;
@@ -145,7 +163,11 @@ body {
         }
     }
 
-    .tasks {
+    .app {
         width: 75%;
+    }
+
+    .tasks {
+        width: 50%;
     }
 }
