@@ -1,0 +1,150 @@
+/* In the name of Allah */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --ff: "Poppins", sans-serif;
+    --hash: #9900ff;
+    --range: #ff6d01;
+    --status: #b7e1cd;
+    --day: #46bdc6;
+    --review: #ffff00;
+}
+
+
+
+/********** General Styling **********/
+body {
+    font-family: var(--ff);
+    /* background: black;
+    color: white; */
+}
+
+.hash {
+    background-color: var(--hash);
+    color: white;
+}
+.range {
+    background-color: var(--range);
+}
+.status {
+    background-color: var(--status);
+}
+.day{
+    background-color: var(--day);
+}
+.review {
+    background-color: var(--review);
+}
+
+
+
+#intro {
+    text-align: center;
+}
+
+
+
+/********** Container Styling **********/
+.container {
+    /* background: red; */
+    max-width: 100%;
+    text-align: center;
+}
+
+#buttons {
+    padding-inline: 25%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-block-end: 2rem;
+
+}
+
+button:not(#version) {
+    border: 0;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    font-size: large;
+    background-color: #eee;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #aaa;
+}
+button:first-of-type:active {
+    background-color: gold;
+}
+button:last-of-type:active {
+    background-color: green;
+}
+
+#save {
+    min-width: 25%;
+    justify-content: center;
+    background-color: darkred;
+    color: whitesmoke;
+}
+#save:active {
+    background-color: darkgreen;
+}
+
+#version {
+    background-color: transparent;
+    border: 0;
+    font-size: medium;
+    transform: rotate(-15deg);
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    box-shadow: 0 0 1rem 0 black;
+    border-radius: 1rem;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    border-collapse: collapse;
+
+    thead tr > * {
+        padding: 0.5rem;
+    }
+
+    .date {
+        padding: 0.25rem;
+    }
+}
+
+.table {
+    overflow-x: auto;
+}
+
+.program_o,
+.program_b {
+    display: none;
+}
+
+.date,
+.spaced-repeat {
+    font-family: var(--ff);
+    font-weight: bold;
+}
+
+
+
+/********** Status Styling **********/
+select > option[value="easy"] ~  {
+    background-color: green;
+}

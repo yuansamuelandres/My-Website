@@ -779,6 +779,9 @@ hr {
 .card-1 li:nth-child(6) {
     background-image: linear-gradient(90deg, var(--clr-q2), var(--clr-q3));
 }
+.card-1 li:nth-child(7) {
+    background-image: linear-gradient(90deg, #9900ff, #ff6d01, #b7e1cd, #46bdc6, #ffff00);
+}
 .parent_cards > * li:nth-child(n) {
     transition: background-color 0.3s, box-shadow 0.3s, text-shadow 0.3s;
 }
@@ -1069,6 +1072,19 @@ body.dark-mode .card-1 li:nth-child(6):hover {
     box-shadow: 
         0 0 0.5rem 0 var(--clr-q2),
         0 0 0.5rem 0 var(--clr-q3);
+}
+body.dark-mode .card-1 li:nth-child(7) {
+    background-image: linear-gradient(90deg, #9900ff, #ff6d01, #b7e1cd, #46bdc6, #ffff00);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+body.dark-mode .card-1 li:nth-child(7):hover {
+    box-shadow: 
+        0 0 0.5rem #9900ff,
+        0 0 0.5rem #ff6d01,
+        0 0 0.5rem #b7e1cd,
+        0 0 0.5rem #46bdc6,
+        0 0 0.5rem #ffff00;
 }
 
 body.dark-mode .card-3 li:nth-child(1):hover {
