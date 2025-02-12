@@ -39,7 +39,7 @@ button_B_en.addEventListener('click', function () {
     program_O_en.style.display = 'none'
     program_B_en.style.display = 'initial'
 })
-
+ 
 
 //////////////////////////////////////////////////////////////////////////////////
 //! Loading the local storage
@@ -104,7 +104,7 @@ checkboxDone.forEach (cd => {
             date.textContent = formattedDate
             review.textContent = ''
             save_Review(document.querySelectorAll(".difficulty"))
-            status.value = 'green'
+            status.value != 'red' ? status.value = 'green' : status.value = 'yellow'
             save_Difficulty(difficulties)       // To localStorage
             td.style.backgroundColor = status.value
         } else {
