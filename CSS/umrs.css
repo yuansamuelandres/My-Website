@@ -26,6 +26,7 @@ body {
     font-family: var(--ff);
     /* background: black;
     color: white; */
+    text-align: center;
 }
 
 nav {
@@ -74,13 +75,17 @@ nav:hover {
 
 
 /********** Container Styling **********/
-.container {
+.container-ar, .container-en {
     /* background: red; */
     max-width: 100%;
     text-align: center;
+    display: none;
+}
+.container-ar {
+    direction: rtl;
 }
 
-#buttons {
+#buttons, #langs {
     padding-inline: 25%;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -151,8 +156,10 @@ table {
     overflow-x: auto;
 }
 
-.program_o,
-.program_b {
+.program_o-ar,
+.program_b-ar,
+.program_o-en,
+.program_b-en {
     display: none;
 }
 
@@ -162,9 +169,9 @@ table {
     font-weight: bold;
 }
 
-
-
-/********** Status Styling **********/
-select > option[value="easy"] ~  {
-    background-color: green;
+#instructions_ar {
+    text-align: justify;
+}
+#instructions_en {
+    text-align: justify;
 }

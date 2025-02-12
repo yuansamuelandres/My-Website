@@ -1,18 +1,43 @@
 // In the name of Allah
 
 //! Triggering the buttons, and displaying the corresponding divs
-let button_O = document.getElementById("o")
-let button_B = document.getElementById("b")
-let program_O = document.querySelector(".program_o")
-let program_B = document.querySelector(".program_b")
+let button_ar = document.getElementById("arabic")
+let button_en = document.getElementById("english")
+let button_O_ar = document.getElementById("o-ar")
+let button_B_ar = document.getElementById("b-ar")
+let button_O_en = document.getElementById("o-en")
+let button_B_en = document.getElementById("b-en")
+let program_ar = document.querySelector(".container-ar")
+let program_en = document.querySelector(".container-en")
+let program_O_ar = document.querySelector(".program_o-ar")
+let program_B_ar = document.querySelector(".program_b-ar")
+let program_O_en = document.querySelector(".program_o-en")
+let program_B_en = document.querySelector(".program_b-en")
 
-button_O.addEventListener('click', function () {
-    program_B.style.display = 'none'
-    program_O.style.display = 'initial'
+button_ar.addEventListener('click', function () {
+    program_en.style.display = 'none'
+    program_ar.style.display = 'initial'
 })
-button_B.addEventListener('click', function () {
-    program_O.style.display = 'none'
-    program_B.style.display = 'initial'
+button_en.addEventListener('click', function () {
+    program_ar.style.display = 'none'
+    program_en.style.display = 'initial'
+})
+
+button_O_ar.addEventListener('click', function () {
+    program_B_ar.style.display = 'none'
+    program_O_ar.style.display = 'initial'
+})
+button_B_ar.addEventListener('click', function () {
+    program_O_ar.style.display = 'none'
+    program_B_ar.style.display = 'initial'
+})
+button_O_en.addEventListener('click', function () {
+    program_B_en.style.display = 'none'
+    program_O_en.style.display = 'initial'
+})
+button_B_en.addEventListener('click', function () {
+    program_O_en.style.display = 'none'
+    program_B_en.style.display = 'initial'
 })
 
 
