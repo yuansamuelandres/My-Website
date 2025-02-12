@@ -39,7 +39,7 @@ button_B_en.addEventListener('click', function () {
     program_O_en.style.display = 'none'
     program_B_en.style.display = 'initial'
 })
- 
+
 
 //////////////////////////////////////////////////////////////////////////////////
 //! Loading the local storage
@@ -62,7 +62,7 @@ checkboxStatus.forEach (cs => {
         let difficulty = date_row.querySelector(".difficulty")
         let done = date_row.querySelector(".done")
         if (this.checked) {
-            // this.setAttribute("disabled", "true")
+            difficulty.removeAttribute("disabled")
             let today = new Date();
             let formattedDate = today.toLocaleDateString('en-US', {
                 year: 'numeric',
@@ -70,14 +70,19 @@ checkboxStatus.forEach (cs => {
                 day: 'numeric'
             })
             date_td.textContent = ''
-            date_td.textContent = formattedDate;
+            date_td.textContent = formattedDate
             saveCheckboxes_Status(checkboxStatus)   // To localStorage
         } else {    // Clearing everything when Status button isn't checked
             date_td.textContent = ''
             review_td.textContent = ''
+            save_Review(document.querySelectorAll(".difficulty"))
             done.checked = false
+            done.setAttribute("disabled", "true")
+            saveCheckboxes_Done(checkboxDone)       // To localStorage
             difficulty.value = ''
             difficulty.parentElement.style.backgroundColor = 'transparent'
+            save_Difficulty(document.querySelectorAll(".difficulty"))
+            difficulty.setAttribute("disabled", "true")
             saveCheckboxes_Status(checkboxStatus)   // To localStorage
         }
     })
@@ -85,13 +90,19 @@ checkboxStatus.forEach (cs => {
 
 let checkboxDone = document.querySelectorAll(".done")
 checkboxDone.forEach (cd => {
+    // Todo: Logic II ===> Prevent the access to the Done? unless the Status is checked & there's a review date.
+    cd.setAttribute("disabled", "true")
+    let row = cd.closest("tr")
+    let status = row.querySelector(".check")
+    let review = row.querySelector(".spaced-repeat")
+    if (status.checked === true && review.textContent != '') {cd.removeAttribute("disabled")}
     cd.addEventListener('change', function () {
         let row = this.closest('tr')
         let date = row.querySelector(".date")
         let review = row.querySelector(".spaced-repeat")
         let status = row.querySelector(".difficulty")
         let td = status.parentElement
-        
+
         if (this.checked) {
             saveCheckboxes_Done(checkboxDone)   // To localStorage
             let today = new Date()
@@ -119,6 +130,11 @@ checkboxDone.forEach (cd => {
 //! Assigning the values of the difficulty & changing the background color accordingly
 let difficulties = document.querySelectorAll(".difficulty")
 difficulties.forEach (d => {
+    // Todo: Logic I ===> Prevent the access to the Difficulty unless the Status is checked.
+    d.setAttribute("disabled", 'true')
+    let row = d.closest("tr")
+    let status = row.querySelector(".check")
+    if (status.checked === true) {d.removeAttribute("disabled")}
     d.addEventListener('change', function (){
         let selectedColor = this.value
         let cell = this.parentElement
@@ -129,10 +145,11 @@ difficulties.forEach (d => {
             cell.style.backgroundColor = selectedColor 
             save_Difficulty(difficulties)       // To localStorage
             if (selectedColor !== 'green') {
-            done.checked = false
-            saveCheckboxes_Done(checkboxDone)   // To localStorage
+                done.removeAttribute("disabled")
+                done.checked = false
+                saveCheckboxes_Done(checkboxDone)   // To localStorage
             } else {
-                // d.setAttribute("disabled", "true")
+                done.setAttribute("disabled", "true")
                 done.checked = true
                 saveCheckboxes_Done(checkboxDone)
             }
