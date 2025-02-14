@@ -10,9 +10,13 @@ let button_B_en = document.getElementById("b-en")
 let program_ar = document.querySelector(".container-ar")
 let program_en = document.querySelector(".container-en")
 let program_O_ar = document.querySelector(".program_o-ar")
+const original_O_ar = program_O_ar.cloneNode(true)
 let program_B_ar = document.querySelector(".program_b-ar")
+const original_B_ar = program_B_ar.cloneNode(true)
 let program_O_en = document.querySelector(".program_o-en")
+const original_O_en = program_O_en.cloneNode(true)
 let program_B_en = document.querySelector(".program_b-en")
+const original_B_en = program_B_en.cloneNode(true)
 
 button_ar.addEventListener('click', function () {
     program_en.style.display = 'none'
@@ -115,7 +119,7 @@ checkboxDone.forEach (cd => {
             date.textContent = formattedDate
             review.textContent = ''
             save_Review(document.querySelectorAll(".difficulty"))
-            status.value != 'red' ? status.value = 'green' : status.value = 'yellow'
+            status.value = ''
             save_Difficulty(difficulties)       // To localStorage
             td.style.backgroundColor = status.value
         } else {
@@ -152,6 +156,10 @@ difficulties.forEach (d => {
                 done.setAttribute("disabled", "true")
                 done.checked = true
                 saveCheckboxes_Done(checkboxDone)
+                closure_O_ar()
+                closure_B_ar()
+                closure_O_en()
+                closure_B_en()
             }
         } else {
             done.checked = false
@@ -195,6 +203,98 @@ difficulties.forEach (d => {
     })
 })
 
+
+
+//////////////////////////////////////////////////////////////////////////////////
+//TODO: Clearing all the table when a closure is reached.
+function closure_O_ar () {
+    // let status =
+    let done = program_O_ar.querySelectorAll(".done")
+    if (Array.from(done).every(d => d.checked)) {
+        window.alert("لقد أتممت ختمة الأصول")
+        done.forEach(d => {
+            d.checked = false
+            saveCheckboxes_Done(document.querySelectorAll(".done"))
+            let row = d.closest("tr")
+            let status = row.querySelector(".check")
+            status.checked = false
+            let day = row.querySelector(".date")
+            day.textContent = ''
+            saveCheckboxes_Status(document.querySelectorAll(".check"))
+            let difficulty = row.querySelector(".difficulty")
+            difficulty.setAttribute("disabled", "true")
+            difficulty.value = ''
+            difficulty.parentElement.style.backgroundColor = 'transparent'
+            save_Difficulty(document.querySelectorAll(".difficulty"))
+        })
+    }
+}
+function closure_B_ar () {
+    // let status =
+    let done = program_B_ar.querySelectorAll(".done")
+    if (Array.from(done).every(d => d.checked)) {
+        window.alert("لقد أتممت ختمة الفرش")
+        done.forEach(d => {
+            d.checked = false
+            saveCheckboxes_Done(document.querySelectorAll(".done"))
+            let row = d.closest("tr")
+            let status = row.querySelector(".check")
+            status.checked = false
+            let day = row.querySelector(".date")
+            day.textContent = ''
+            saveCheckboxes_Status(document.querySelectorAll(".check"))
+            let difficulty = row.querySelector(".difficulty")
+            difficulty.setAttribute("disabled", "true")
+            difficulty.value = ''
+            difficulty.parentElement.style.backgroundColor = 'transparent'
+            save_Difficulty(document.querySelectorAll(".difficulty"))
+        })
+    }
+}
+function closure_O_en () {
+    // let status =
+    let done = program_O_en.querySelectorAll(".done")
+    if (Array.from(done).every(d => d.checked)) {
+        window.alert("You've completed the Origins Closure")
+        done.forEach(d => {
+            d.checked = false
+            saveCheckboxes_Done(document.querySelectorAll(".done"))
+            let row = d.closest("tr")
+            let status = row.querySelector(".check")
+            status.checked = false
+            let day = row.querySelector(".date")
+            day.textContent = ''
+            saveCheckboxes_Status(document.querySelectorAll(".check"))
+            let difficulty = row.querySelector(".difficulty")
+            difficulty.setAttribute("disabled", "true")
+            difficulty.value = ''
+            difficulty.parentElement.style.backgroundColor = 'transparent'
+            save_Difficulty(document.querySelectorAll(".difficulty"))
+        })
+    }
+}
+function closure_B_en () {
+    // let status =
+    let done = program_B_en.querySelectorAll(".done")
+    if (Array.from(done).every(d => d.checked)) {
+        window.alert("You've completed the Branches Closure")
+        done.forEach(d => {
+            d.checked = false
+            saveCheckboxes_Done(document.querySelectorAll(".done"))
+            let row = d.closest("tr")
+            let status = row.querySelector(".check")
+            status.checked = false
+            let day = row.querySelector(".date")
+            day.textContent = ''
+            saveCheckboxes_Status(document.querySelectorAll(".check"))
+            let difficulty = row.querySelector(".difficulty")
+            difficulty.setAttribute("disabled", "true")
+            difficulty.value = ''
+            difficulty.parentElement.style.backgroundColor = 'transparent'
+            save_Difficulty(document.querySelectorAll(".difficulty"))
+        })
+    }
+}
 
 
 
