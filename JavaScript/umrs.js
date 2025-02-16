@@ -1,6 +1,8 @@
 // In the name of Allah
 
 //! Triggering the buttons, and displaying the corresponding divs
+let beta = document.getElementById("version")
+let name = document.querySelector("u")
 let button_ar = document.getElementById("arabic")
 let button_en = document.getElementById("english")
 let button_O_ar = document.getElementById("o-ar")
@@ -21,10 +23,18 @@ const original_B_en = program_B_en.cloneNode(true)
 button_ar.addEventListener('click', function () {
     program_en.style.display = 'none'
     program_ar.style.display = 'initial'
+    beta.innerHTML = ''
+    beta.innerHTML = 'نسخة تجريبية'
+    name.innerHTML = ''
+    name.innerHTML = 'برنامج لمراجعة الشاطبية والدرة'
 })
 button_en.addEventListener('click', function () {
     program_ar.style.display = 'none'
     program_en.style.display = 'initial'
+    beta.innerHTML = ''
+    beta.innerHTML = 'Beta Version'
+    name.innerHTML = ''
+    name.innerHTML = 'UMRS'
 })
 
 button_O_ar.addEventListener('click', function () {

@@ -24,6 +24,7 @@ html {
 /********** General Styling **********/
 body {
     font-family: var(--ff);
+    font-weight: bold;
     /* background: black;
     color: white; */
     text-align: center;
@@ -156,6 +157,11 @@ table {
     overflow-x: auto;
 }
 
+select, option {
+    font-family: var(--ff);
+    font-weight: bold;
+}
+
 .program_o-ar,
 .program_b-ar,
 .program_o-en,
@@ -174,4 +180,14 @@ table {
 }
 #instructions_en {
     text-align: justify;
+}
+
+ol > li:not(:nth-child(2)) {
+    padding-block-end: 1rem;
+}
+ul > li {
+    padding-block-end: 0.5rem;
+}
+ul > li:nth-child(3) {
+    padding-block-end: 1rem;
 }
