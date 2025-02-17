@@ -2,6 +2,8 @@
 
 //! Triggering the buttons, and displaying the corresponding divs
 let beta = document.getElementById("version")
+let intro = document.getElementById("intro")
+let container = document.querySelector(".container")
 let name = document.querySelector("u")
 let button_ar = document.getElementById("arabic")
 let button_en = document.getElementById("english")
@@ -19,6 +21,25 @@ let program_O_en = document.querySelector(".program_o-en")
 const original_O_en = program_O_en.cloneNode(true)
 let program_B_en = document.querySelector(".program_b-en")
 const original_B_en = program_B_en.cloneNode(true)
+
+document.addEventListener("DOMContentLoaded", function () {
+    if (!localStorage.getItem("introShown")) {
+        intro.style.display = 'initial'
+        container.style.display = 'none'
+        localStorage.setItem("introShown", true)
+        
+    } else {
+        intro.style.display = 'none'
+        document.querySelector("audio").removeAttribute("autoplay")
+        container.style.display = 'initial'
+    }
+})
+setTimeout(function () {
+    intro.style.display = 'none'
+    container.style.display = 'initial'
+},12500)
+
+
 
 button_ar.addEventListener('click', function () {
     program_en.style.display = 'none'

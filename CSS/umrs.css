@@ -71,11 +71,145 @@ nav:hover {
 
 #intro {
     text-align: center;
+
+    > span:first-child {
+        opacity: 0;
+        animation: fade 2s ease-in forwards;
+    }
+
+    > h2 {
+        opacity: 0;
+        animation: fade 2s ease-in forwards;
+        animation-delay: 2s;
+    }
+}
+h1 .two {
+    visibility: hidden;
+    animation: appear 2s ease-in forwards;
+    animation-delay: 9.8s;
+}
+
+#intro:not(h1) {
+    font-size: larger;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes appear {
+    to {
+        visibility: visible;
+    }
+}
+
+.one span:not(.two) {
+    opacity: 0;
+    animation: fascinate 1s forwards;
+
+}
+.one span:nth-child(1) {
+    animation-delay: 4s;
+}
+.one span:nth-child(2) {
+    animation-delay: 4.2s;
+}
+.one span:nth-child(3) {
+    animation-delay: 4.4s;
+}
+.one span:nth-child(4) {
+    animation-delay: 4.6s;
+}
+.one span:nth-child(5) {
+    animation-delay: 4.8s;
+}
+.one span:nth-child(6) {
+    animation-delay: 5s;
+}
+.one span:nth-child(7) {
+    animation-delay: 5.2s;
+}
+.one span:nth-child(8) {
+    animation-delay: 5.4s;
+}
+.one span:nth-child(9) {
+    animation-delay: 5.6s;
+}
+.one span:nth-child(10) {
+    animation-delay: 5.8s;
+}
+.one span:nth-child(11) {
+    animation-delay: 6s;
+}
+.one span:nth-child(12) {
+    animation-delay: 6.2s;
+}
+.one span:nth-child(13) {
+    animation-delay: 6.4s;
+}
+.one span:nth-child(14) {
+    animation-delay: 6.6s;
+}
+.one span:nth-child(15) {
+    animation-delay: 6.8s;
+}
+.one span:nth-child(16) {
+    animation-delay: 7s;
+}
+.one span:nth-child(17) {
+    animation-delay: 7.2s;
+}
+.one span:nth-child(18) {
+    animation-delay: 7.4s;
+}
+.one span:nth-child(19) {
+    animation-delay: 7.6s;
+}
+.one span:nth-child(20) {
+    animation-delay: 7.8s;
+}
+.one span:nth-child(21) {
+    animation-delay: 8s;
+}
+.one span:nth-child(22) {
+    animation-delay: 8.2s;
+}
+.one span:nth-child(23) {
+    animation-delay: 8.4s;
+}
+.one span:nth-child(24) {
+    animation-delay: 8.6s;
+}
+.one span:nth-child(25) {
+    animation-delay: 8.8s;
+}
+.one span:nth-child(26) {
+    animation-delay: 9s;
+}
+.one span:nth-child(27) {
+    animation-delay: 9.2s;
+}
+.one span:nth-child(28) {
+    animation-delay: 9.4s;
+}
+
+@keyframes fascinate {
+    to {
+        opacity: 1;
+    }
 }
 
 
+/********** Containers Styling **********/
+.container {
+    display: none;
+}
 
-/********** Container Styling **********/
 .container-ar, .container-en {
     /* background: red; */
     max-width: 100%;
