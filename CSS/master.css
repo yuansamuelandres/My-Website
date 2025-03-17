@@ -45,10 +45,13 @@ font-variation-settings:
 
     --clr-f1: #4e91fd;
 
-    --clr-c: #5e97d0;
     --clr-html: #e34c26;
     --clr-css: #264de4;
     --clr-js: #f0db4f;
+    --clr-c: #5e97d0;
+    --clr-py1: #ffde57;
+    --clr-py2: #4584b6;
+    /* --clr-py3: #646464; */
 
     --clr-border: #ffffff;
     --clr-border-hover: #000000;
@@ -747,6 +750,10 @@ hr {
         display: grid;
         gap: 0.5rem;
         grid-template-columns: repeat(auto-fit, minmax(min(5rem, 100%), 1fr));
+        
+        li {
+            align-content: center;
+        }
     }
 }
 
@@ -798,11 +805,18 @@ hr {
 }
 
 .card-6 li:nth-child(1) {
+    background-image: linear-gradient(90deg, var(--clr-html), var(--clr-css), var(--clr-js));
+    /* color: white; */
+}
+
+.card-6 li:nth-child(2) {
     background-color: var(--clr-c);
     color: white;
 }
-.card-6 li:nth-child(2) {
-    background-image: linear-gradient(90deg, var(--clr-html), var(--clr-css), var(--clr-js));
+
+.card-6 li:nth-child(3) {
+    background-image: linear-gradient(90deg, var(--clr-py1), var(--clr-py2));
+    color: var(--clr-py3);
 }
 
 .card-7 li:nth-child(2) {
@@ -1066,20 +1080,32 @@ body.dark-mode .card-3 li:nth-child(1):hover {
     box-shadow: 0 0 0.5rem 0 var(--clr-f1);
 }
 
-body.dark-mode .card-6 li:nth-child(1):hover {
-    box-shadow: 0 0 0.5rem 0 var(--clr-c);
-}
-
-body.dark-mode .card-6 li:nth-child(2) {
+body.dark-mode .card-6 li:nth-child(1) {
     background-image: linear-gradient(90deg, var(--clr-html), var(--clr-css), var(--clr-js));
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-body.dark-mode .card-6 li:nth-child(2):hover {
+body.dark-mode .card-6 li:nth-child(1):hover {
     box-shadow: 
-        0 0 0.5rem 0 var(--clr-html),
-        0 0 0.5rem 0 var(--clr-css),
-        0 0 0.5rem 0 var(--clr-js);
+    0 0 0.5rem 0 var(--clr-html),
+    0 0 0.5rem 0 var(--clr-css),
+    0 0 0.5rem 0 var(--clr-js);
+}
+
+body.dark-mode .card-6 li:nth-child(2):hover {
+    box-shadow: 0 0 0.5rem 0 var(--clr-c);
+}
+
+body.dark-mode .card-6 li:nth-child(3) {
+    background-image: linear-gradient(90deg, var(--clr-py1), var(--clr-py2));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+body.dark-mode .card-6 li:nth-child(3):hover {
+    box-shadow: 
+        0 0 0.5rem 0 var(--clr-py1),
+        0 0 0.5rem 0 var(--clr-py2);
 }
 
 body.dark-mode .card-7 li:nth-child(2) {
