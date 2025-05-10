@@ -111,7 +111,9 @@ function generator (a) {
 
         R.value = randomQ(1,10)
         if (R.value === 5) {
-            N.value = randomQ(1,3)
+            // N.value = randomQ(1,3)
+            // console.log("hello")
+            continue
         } else {
             N.value = randomQ(1,2)
         }
@@ -138,9 +140,9 @@ function generator (a) {
                 arrayOfQs = []
                 arrayOfQObjects = []
                 historyArray = []
-                window.alert("A full cycle is completed.")
                 i = a
-                addGenerateButton()
+                showHistory.style.display = 'none'
+                generator(q)
             } else {
                 R.value = randomQ(1,10)
                 if (R.value === 5) {
@@ -198,6 +200,9 @@ function addQToArray (r, n, b) {
 function addArrayToLocalStorage (arrayO, arrayQ) {
     localStorage.setItem("Quests", JSON.stringify(arrayO))
     localStorage.setItem("Keys", JSON.stringify(arrayQ))
+    if (arrayOfQs.length === 20) {
+        window.alert("A full cycle is completed.")
+    }
 }
 
 function generateNewQs (btn) {
@@ -278,9 +283,6 @@ function addToHistory () {
         b.value = arrayOfQObjects[i].B
         divQuestions.appendChild(branch)
         branch.appendChild(b)
-        console.log(r.value)
-        console.log(n.value)
-        console.log(b.value)
     }
 }
 
