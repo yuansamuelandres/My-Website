@@ -1,4 +1,5 @@
 # Upcoming Updates
+- Upgrading the design of the Home Page.
 - tasks-app.html
     - Integrating  by adding different sections & categories (lectures to do, lectures to study, lectures to review, lectures to print).
     - Transforming this app into an ultimate lectures management system.
