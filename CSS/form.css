@@ -1,0 +1,87 @@
+/* In the name of Allah */
+
+/*************** Variables ***************/
+:root {
+    --ff: 'Lato';
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+
+/*************** Global Styling ***************/
+body {
+    font-family: var(--ff);
+    font-weight: 700;
+    background: black;
+    color: whitesmoke;
+    height: 95dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input::placeholder,
+textarea::placeholder {
+    font-weight: bold;
+    text-align: center;
+}
+
+input,
+textarea, 
+button {
+    border: 0;
+}
+
+
+
+/*************** Main Styling ***************/
+.container {
+    max-width: 95%;
+    margin-inline: auto;
+    background-color: blueviolet;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+form {
+    align-self: center;
+    padding: 0.5rem;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    input, textarea, button {
+        border-radius: 0.25rem;
+        padding: 0.25rem;
+    }
+
+    button {
+        width: 25%;
+        aspect-ratio: 2/1;
+        justify-self: center;
+        font-weight: bolder;
+        font-size: larger;
+        color: green;
+    }
+}
+
+
+
+/*************** Media Queries ***************/
+@media (min-width:600px) {
+    .container {
+        max-width: 50%;
+    }
+}
+
+
+
+
