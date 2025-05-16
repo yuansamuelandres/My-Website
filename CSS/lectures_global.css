@@ -13,6 +13,7 @@
     --clr-text-d: #ffb874;
     --clr-text-hj: #4e91fd;
     --clr-text-f: #ec6b5b;
+    --clr-text-T: #ffd700;
 
     --ff: "Arial";
 }
@@ -85,7 +86,7 @@ a:hover {
 }
 
 .body-T {
-    color: gold;
+    color: var(--clr-text-T);
 }
 
 .body-f {
