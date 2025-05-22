@@ -159,6 +159,7 @@ function generator (a) {
             }
         }
         function addQToPage () {
+            openList.style.display = 'none'
             postProgram.appendChild(label)
             divR.appendChild(R)
             postProgram.appendChild(divR)
@@ -296,5 +297,32 @@ hideHistory.addEventListener("click", function () {
     hideHistory.style.display = "none"
     showHistory.style.display = "initial"
 })
+
+// A feature that shows the list of previous questions
+let openList = document.querySelector(".showList")
+let closeList = document.querySelector(".hideList")
+
+function list_Opened () {
+    openList.style.display = 'none'
+    program.style.display = 'none'
+    Program.style.display = 'initial'
+    addToHistory()
+    showHistory.style.display = 'none'  // To revert the first command of addToHistory()
+    divQuestions.style.display = "grid"
+    Program.appendChild(divQuestions)
+    closeList.style.cssText = `
+        display: initial;
+        position: fixed;
+        top: 45dvh;
+        right: 1rem;`
+}
+function list_Closed () {
+    closeList.style.display = 'none'
+    divQuestions.style.display = 'none'
+    program.style.display = 'flex'
+    openList.style.display = 'initial'
+}
+
+
 
 // localStorage.clear()

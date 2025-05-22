@@ -169,6 +169,22 @@ nav:hover {
     background-color: #264de4;
 }
 
+button[class="showList"],
+button[class="hideList"] {
+    outline: wheat solid;
+    padding: 0.25rem 0.5rem;
+    float: right;
+    margin-block-start: 1rem;
+} 
+button[class="showList"] {
+    background-color: #06402B;
+    color: wheat;
+}
+button[class="hideList"] {
+    display: none;
+    background-color: #950606;
+    color: whitesmoke;
+}
 
 
 #post-program {
