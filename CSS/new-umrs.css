@@ -1,0 +1,383 @@
+/* In the name of Allah */
+
+html {
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --ff: 'Poppins', sans-serif;
+    --ff-black: 'Anton', sans-serif;
+    --clr-button_add-icon: #0c1844;
+    --clr-button_add-background: #ff6969;
+    --clr-button_add-background-hover: #c80036;
+    --clr-button_add-text: #fff5e1;
+    --clr-button_edit-icon: blue;
+    --clr-button_edit-icon-hover: black;
+    --clr-button_delete-icon: red;
+    --clr-button_delete-icon-hover: #521c0d;
+    --clr-button_view-icon-hover: rgb(4, 61, 4);
+    --clr-button_cancel-text: #f3f3e0; 
+    --clr-button_submit-icon: #0088cc;
+    --clr-button_submit-icon-hover: rgb(2, 84, 125);
+}
+
+
+/******************** General ********************/
+body {
+    margin: 0;
+    max-width: 90%;
+    margin-inline: auto;
+    font-family: var(--ff);
+    font-size: large;
+    font-weight: bold;
+}
+
+.container {
+    transition: opacity 0.5s;
+}
+
+header, 
+main,
+footer {
+    width: 100%;
+}
+
+input, button {
+    outline: 0;
+    border-radius: 0.35rem;
+    padding: 0;
+}
+
+button {
+    border: 0;
+    cursor: pointer;
+}
+
+
+
+/******************** Utility Classes ********************/
+.none {
+    display: none;
+}
+
+
+
+/******************** Form Div ********************/
+.adding-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 1rem;
+    border: 0.25rem solid orangered;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    z-index: 100;
+    display: none;
+
+    input {
+        padding-block: 0.5rem;
+        font-weight: bold;
+        font-size: large;
+        border: 0.125rem solid;
+    }
+
+    button {
+        font-family: var(--ff);
+        font-size: large;
+        font-weight: bold;
+        padding: 0.5rem;
+    }
+
+    #add {
+        background-color: lightgreen;
+    }
+
+    #cancel {
+        background-color: lightcoral;
+        color: var(--clr-button_cancel-text);
+    }
+
+    > div {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    span {
+        grid-column: 1 / -1;
+        text-align: center;
+        color: green;
+    }
+}
+
+@media (width >= 750px) {
+    .adding-form {
+        grid-template-columns: 1fr 2fr;
+        gap: 2rem;
+    }
+}
+
+
+
+/******************** Header ********************/
+header {
+    margin-block-start: 1rem;
+    margin-block-end: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    input {
+        border: 0;
+        background-color: #ddd;
+        width: 100%;
+        font-size: large;
+        font-weight: bold;
+    }
+
+    span {
+        display: none;
+    }
+}
+
+.search {
+    background-color: #ddd;
+    flex-grow: 1;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0.35rem;
+}
+
+#add-entry {
+    width: 2.5rem;
+    aspect-ratio: 1 / 1;
+    font-size: large;
+    padding: 0.5rem;
+    background-color: var(--clr-button_add-background);
+    font-weight: bold;
+    color: var(--clr-button_add-text);
+
+    i {
+        color: var(--clr-button_add-icon);
+    }
+}
+#add-entry:active {
+    background-color: var(--clr-button_add-background-hover);
+}
+
+
+@media (width >= 750px) {
+    header span {
+        display: initial;
+    }
+    header > span {
+        flex-grow: 2;
+        font-family: var(--ff-black);
+        font-weight: 400;
+        letter-spacing: 0.5ch;
+        font-size: xx-large;
+
+    }
+
+    header .search {
+        flex-grow: 1;
+    }
+
+    header #add-entry {
+        width: fit-content;
+        aspect-ratio: 0;
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+
+/******************** Main ********************/
+table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    border-style: solid;
+    border-color: black;
+
+    td {
+        border: 1px solid;
+    }
+}
+
+tr:nth-of-type(2n) {
+    background: hsl(0 0% 0% / 0.25);
+}
+
+.actions {
+    .actions-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        
+    }
+    span {
+        padding-inline: 0.5rem;
+    }
+
+    button {
+        font-size: large;
+        cursor: pointer;
+        padding: 0.25rem;
+        background: none;
+    }
+
+    .edit {
+        color: var(--clr-button_edit-icon);
+    }
+    .edit:hover,
+    .edit:active {
+        color: var(--clr-button_edit-icon-hover);
+    }
+
+    .delete {
+        color: var(--clr-button_delete-icon);
+    }
+    .delete:hover,
+    .delete:active {
+        color: var(--clr-button_delete-icon-hover);
+    }
+
+    .view {
+        color: green;
+    }
+    .view:hover,
+    .view:active {
+        color: var(--clr-button_view-icon-hover);
+    }
+
+    .submit {
+        color: var(--clr-button_submit-icon);
+    }
+    .submit:hover,
+    .submit:active {
+        color: var(--clr-button_submit-icon-hover);
+    }
+}
+
+#stats {
+    margin-block: 1rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-evenly;
+    text-align: center;
+
+    input {
+        border-color: black;
+        border-style: solid;
+        width: 2.5rem;
+        aspect-ratio: 1 / 1;
+        font-size: large;
+        text-align: center;
+        font-weight: bold;
+    }
+}
+
+@media (width <= 750px) {
+    table {
+        max-width: 100%;
+        td {
+            border-color: #eee;
+        }
+    }
+
+    th {
+        display: none;
+    }
+
+
+    td:last-child{
+        padding-bottom: 2rem;
+    }
+
+    td {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 1fr 3fr;
+        align-items: center;
+        justify-content: center;
+        text-align: left;
+        padding-block: 0.5rem;
+    }
+    td::before {
+        content: attr(data-cell) ":";
+        text-align: left;
+        flex-grow: 1;
+    }
+
+    select {
+        max-width: 50%;
+    }
+
+    .first {
+        display: flex;
+
+        span {
+            flex-grow: 2;
+        }
+
+        button {
+            width: 2rem;
+            aspect-ratio: 1 / 1;
+            margin-inline-end: 0.25rem;
+        }
+
+        .edit {
+            color: var(--clr-button_edit-icon);
+            background-color: rgba(0, 0, 255, 0.15);
+        }
+        .edit:active {
+            background-color: rgba(0, 0, 255, 0.35);
+        }
+
+        .delete {
+            color: var(--clr-button_delete-icon);
+            background-color: rgba(245, 0, 0, 0.15);
+        }
+        .delete:active {
+            background-color: rgba(245, 0, 0, 0.35);
+        }
+
+        .submit {
+            color: var(--clr-button_submit-icon);
+            background-color: rgba(2, 124, 185, 0.15);
+        }
+        .submit:active {
+            background-color: rgba(2, 124, 185, 0.35);
+        }
+    }
+
+    /* Display the buttons */
+    .none {
+        display: initial;
+    }
+
+    .actions button {
+            width: fit-content;
+        }
+    
+    /* Hide the unnecessary button in the actions section */
+    .actions {
+        display: none;
+
+    }
+}
