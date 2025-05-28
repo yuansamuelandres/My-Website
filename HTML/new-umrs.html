@@ -1,0 +1,114 @@
+<!-- In the name of Allah -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/new-umrs.css">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <title>New UMRS</title>
+</head>
+<body>
+    <div class="adding-form">
+        <label for="Chapter">Chapter</label>
+        <input type="text" id="Chapter" placeholder="Chapter" required>
+
+        <label for="Range">Range</label>
+        <input type="text" id="Range" placeholder="Range" required>
+
+        <div>
+            <button id="add"><i class="fa-solid fa-plus"></i> Add</button>
+            <button id="cancel""><i class="fa-solid fa-xmark"></i> Cancel</button>
+        </div>
+        <span></span>
+    </div>
+
+    <div class="container">
+        <header>
+            <span>UMRS</span>
+            <div class="search">
+                <input type="text" name="search" id="search" placeholder="Search an entry">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <button id="add-entry">
+                <i class="fa-solid fa-square-plus"></i>
+                <span>Add entry</span>
+            </button>          
+        </header>
+
+
+        <main>
+            <table class="main-table">
+                <thead>
+                    <th><i class="fa-solid fa-book"></i> Chapter</th>
+                    <th><i class="fa-solid fa-arrows-left-right"></i> Range</th>
+                    <th><i class="fa-solid fa-gauge"></i> Difficulty</th>
+                    <th><i class="fa-solid fa-calendar-alt"></i> Day</th>
+                    <th><i class="fa-solid fa-calendar-day"></i> Review</th>
+                    <th><i class="fa-solid fa-spinner"></i> Status</th>
+                    <th><i class="fa-solid fa-ellipsis"></i> Actions</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-cell="Chapter" class="first">
+                            <span>خطبة الكتاب</span>
+                            <button class="edit none"><i class="fa-solid fa-pen-to-square"></i></button>
+                            <button class="delete none"><i class="fa-solid fa-trash"></i></button>
+                            <button class="submit none"><i class="fa-solid fa-paper-plane"></i></button>
+                        </td>
+                        <td data-cell="Range" class="range">1 - 94</td>
+                        <td data-cell="Difficulty" class="difficulty">
+                            <select name="difficulty" id="difficulty">
+                                <option value=" "></option>
+                                <option value="Easy">Easy</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Hard">Hard</option>
+                            </select>
+                        </td>
+                        <td data-cell="Day" class="day"></td>
+                        <td data-cell="Review" class="review"></td>
+                        <td data-cell="Status" class="status"><i class="fa-solid fa-hourglass"></i></td>
+                        <td data-cell="Actions" class="actions">
+                            <div class="actions-wrapper">
+                                <span><button class="edit"><i class="fa-solid fa-pen-to-square"></i></button></span>
+                                <span><button class="delete"><i class="fa-solid fa-trash"></i></button></span>
+                                <span><button class="view"><i class="fa-solid fa-eye"></i></button></span>
+                                <span><button class="submit"><i class="fa-solid fa-paper-plane"></i></button></span>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div id="stats">
+                <div class="complete-counter">
+                    <i class="fa-solid fa-hourglass-end"></i> <label for="complete">Complete:</label>
+                    <input type="number" name="complete" id="complete" readonly value="0">
+                </div>
+
+                <div class="review-counter">
+                    <i class="fa-solid fa-hourglass-half"></i> <label for="review">Review:</label>
+                    <input type="number" name="review" id="review" readonly value="0">
+                </div>
+
+                <div class="pending-counter">
+                    <i class="fa-solid fa-hourglass-start"></i> <label for="pending:">Pending:</label>
+                    <input type="number" name="pending:" id="pending" readonly value="1">
+                </div>
+            </div>
+        </main>
+
+
+        <footer></footer>
+    </div>
+    <script src="../JavaScript/new-umrs.js"></script>
+</body>
+</html>
