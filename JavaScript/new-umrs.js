@@ -1,6 +1,8 @@
 // In the name of Allah
 
-let container = document.querySelector(".container")
+const container = document.querySelector(".container")
+const table = document.querySelector(".main-table")
+
 
 // Toggle the adding entry form
 let addingDivButton = document.getElementById("add-entry")
@@ -88,6 +90,10 @@ addEntry.addEventListener('click', function () {
     cell1i2.classList.add("fa-solid", "fa-trash")
     cell1Button2.appendChild(cell1i2)
     cell1.appendChild(cell1Button2)
+    cell1Button2.addEventListener("click", function () {
+        let row = this.closest("tr")
+        row.remove()
+    })
 
     let cell1Button3 = document.createElement("button")
     cell1Button3.classList.add("submit", "none")
@@ -152,6 +158,10 @@ addEntry.addEventListener('click', function () {
     button2.appendChild(i2)
     span2.appendChild(button2)
     wrapper.appendChild(span2)
+    button2.addEventListener("click", function () {
+        let row = this.closest("tr")
+        row.remove()
+    })
 
     let span3 = document.createElement("span")
     let button3 = document.createElement("button")
@@ -185,7 +195,6 @@ addEntry.addEventListener('click', function () {
 
 //? Functionality of the app 
 // Adding the date when difficulty is triggered with its responsive review & status
-const table = document.querySelector(".main-table")
 table.addEventListener("change", function (event) {
     let today = new Date();
     if (event.target && event.target.tagName === 'SELECT') {
@@ -268,4 +277,14 @@ table.addEventListener("change", function (event) {
     }
 })
 
+
+// Deleting the entry
+let deleteButton = document.querySelectorAll(".delete")
+
+deleteButton.forEach(d => {
+    d.addEventListener("click", function () {
+        let row = this.closest("tr")
+        row.remove()
+    })
+})
 
