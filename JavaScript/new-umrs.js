@@ -35,6 +35,18 @@ function addDataToSubmitForm (button) {
     })
 }
 
+// Deleting the entry
+function deleteEntry (button) {
+    button.addEventListener("click", function () {
+        console.log(this)
+        let row = this.closest("tr")
+        row.remove()
+        pendingCounter -= 1
+        pendingContent.value = pendingCounter
+        console.log(pendingContent.value)
+    })
+}
+
 
 // Toggle the adding entry form
 let addingDivButton = document.getElementById("add-entry")
@@ -122,10 +134,7 @@ addEntry.addEventListener('click', function () {
     cell1i2.classList.add("fa-solid", "fa-trash")
     cell1Button2.appendChild(cell1i2)
     cell1.appendChild(cell1Button2)
-    cell1Button2.addEventListener("click", function () {
-        let row = this.closest("tr")
-        row.remove()
-    })
+    deleteEntry(cell1Button2)
 
     let cell1Button3 = document.createElement("button")
     cell1Button3.classList.add("submit", "none")
@@ -191,10 +200,7 @@ addEntry.addEventListener('click', function () {
     span2.appendChild(button2)
     wrapper.appendChild(span2)
     // Event delegation alternative
-    button2.addEventListener("click", function () {
-        let row = this.closest("tr")
-        row.remove()
-    })
+    deleteEntry(button2)
 
     let span3 = document.createElement("span")
     let button3 = document.createElement("button")
@@ -313,19 +319,6 @@ table.addEventListener("change", function (event) {
             }
         }) 
     }
-})
-
-
-// Deleting the entry
-let deleteButton = document.querySelectorAll(".delete")
-
-deleteButton.forEach(d => {
-    d.addEventListener("click", function () {
-        let row = this.closest("tr")
-        row.remove()
-        pendingCounter -= 1
-        pendingContent.value = pendingCounter
-    })
 })
 
 
