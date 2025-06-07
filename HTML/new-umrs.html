@@ -31,13 +31,46 @@
         <span></span>
     </div>
 
+    <form action="PHP/data.inc.php" method="post">
+        <label for="Chapter">Chapter</label>
+        <input class="Chapter" name="chapter" type="text" placeholder="Chapter" required readonly>
+
+        <label for="Range">Range</label>
+        <input class="Range" name="range" type="text" placeholder="Range" required readonly>
+
+        <label for="Difficulty">Difficulty</label>
+        <select class="Difficulty" name="difficulty" style="place-self: center;" readonly>
+            <option value=" "></option>
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
+        </select>
+
+        <label for="Day">Day</label>
+        <input class="Day" name="day" type="text" placeholder="Day" required readonly>
+        
+        <label for="Review">Review</label>
+        <input class="Review" name="review" type="text" placeholder="Review Date" required readonly>
+
+        <label for="Status">Status</label>
+        <input contenteditable="true" class="Status" name="status" type="text" placeholder="Status" required readonly>
+        <div></div>
+
+        <div>
+            <!-- <input type="submit" value="Save"> -->
+            <button id="save" type="submit"><i class="fa-solid fa-floppy-disk"></i> Save</button>
+            <button id="hide" type="button"><i class="fa-solid fa-xmark"></i> Close</button>
+        </div>
+        <span></span>
+    </form>
+
     <div class="container">
         <header>
             <span>UMRS</span>
-            <div class="search">
-                <input type="text" name="search" id="search" placeholder="Search an entry">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
+            <form class="search" action="PHP/search.php" method="post">
+                <input type="text" name="search" placeholder="Search an entry">
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
             <button id="add-entry">
                 <i class="fa-solid fa-square-plus"></i>
                 <span>Add entry</span>
@@ -57,7 +90,7 @@
                     <th><i class="fa-solid fa-ellipsis"></i> Actions</th>
                 </thead>
                 <tbody>
-                    <tr>
+                    <!-- <tr>
                         <td data-cell="Chapter" class="first">
                             <span>خطبة الكتاب</span>
                             <button class="edit none"><i class="fa-solid fa-pen-to-square"></i></button>
@@ -66,7 +99,7 @@
                         </td>
                         <td data-cell="Range" class="range">1 - 94</td>
                         <td data-cell="Difficulty" class="difficulty">
-                            <select name="difficulty" id="difficulty">
+                            <select id="difficulty">
                                 <option value=" "></option>
                                 <option value="Easy">Easy</option>
                                 <option value="Medium">Medium</option>
@@ -84,7 +117,7 @@
                                 <span><button class="submit"><i class="fa-solid fa-paper-plane"></i></button></span>
                             </div>
                         </td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
 

@@ -2,6 +2,38 @@
 
 const container = document.querySelector(".container")
 const table = document.querySelector(".main-table")
+const form = document.querySelector("form")
+
+//? Functions' Section
+function addDataToSubmitForm (button) {
+    button.addEventListener('click', function () {
+        form.style.display = "grid"
+        let row = this.closest("tr")
+        let Chapter = form.querySelector(".Chapter")
+        let Range = form.querySelector(".Range")
+        let Difficulty = form.querySelector(".Difficulty")
+        let Day = form.querySelector(".Day")
+        let Review = form.querySelector(".Review")
+        let Status = form.querySelector(".Status")
+
+        Chapter.value = ''
+        Range.value = ''
+        Difficulty.value = ''
+        Day.value = ''
+        Review.value = ''
+        Status.value = ''
+
+        Chapter.value = row.querySelector(".first").textContent
+        Range.value = row.querySelector(".range").textContent
+        Difficulty.value = row.querySelector(".difficulty").querySelector("select").value
+        Day.value = row.querySelector(".day").textContent
+        Review.value = row.querySelector(".review").textContent
+        Status.value = row.querySelector(".status").innerHTML
+        form.querySelector("div").innerHTML = Status.value
+        form.style.display = 'grid'
+        container.style.opacity = '0.05'
+    })
+}
 
 
 // Toggle the adding entry form
@@ -158,6 +190,7 @@ addEntry.addEventListener('click', function () {
     button2.appendChild(i2)
     span2.appendChild(button2)
     wrapper.appendChild(span2)
+    // Event delegation alternative
     button2.addEventListener("click", function () {
         let row = this.closest("tr")
         row.remove()
@@ -183,12 +216,15 @@ addEntry.addEventListener('click', function () {
     span4.appendChild(button4)
     wrapper.appendChild(span4)
     cell7.appendChild(wrapper)
+    // Event delegation alternative
+    addDataToSubmitForm(button4)
 
     addingForm.querySelector("span").innerText = 'Entry has been added!'
     setTimeout(deleteSpanMessage, 1000)
 
     pendingCounter += 1
-    pendingContent.value = pendingCounter  
+    pendingContent.value = pendingCounter
+
 })
 
 
@@ -201,10 +237,11 @@ table.addEventListener("change", function (event) {
         let select = event.target
         let option = select.options[select.selectedIndex]
         let row = select.closest("tr")
-
+        
         // Date
         let day_td = row.querySelector(".day")
-        let formattedDate = today.toLocaleDateString('en-US', {
+        let now = new Date();
+        let formattedDate = now.toLocaleDateString('en-US', {
             year: 'numeric',
             month: 'long',
             day: 'numeric'
@@ -231,19 +268,25 @@ table.addEventListener("change", function (event) {
                 statusIcon.classList.add("fa-hourglass-half")
 
                 review.textContent = ''
-                today.setDate(today.getDate() + 3)
-                let formattedDateMedium = today.toLocaleDateString('en-US', {
+                let mediumDate = new Date();
+                mediumDate.setDate(mediumDate.getDate() + 3)
+                let formattedDateMedium = mediumDate.toLocaleDateString('en-US', {
                     year: 'numeric',
                     month: 'long',
                     day: 'numeric'
                 })
                 review.textContent = formattedDateMedium
                 break
-
             case "Hard":
+                console.log("hard")
+                statusIcon.classList.remove("fa-hourglass")
+                statusIcon.classList.remove("fa-hourglass-end")
+                statusIcon.classList.add("fa-hourglass-half")
+
                 review.textContent = ''
-                today.setDate(today.getDate() + 1)
-                let formattedDateHard = today.toLocaleDateString('en-US', {
+                let hardDate = new Date();
+                hardDate.setDate(hardDate.getDate() + 1)
+                let formattedDateHard = hardDate.toLocaleDateString('en-US', {
                     year: 'numeric',
                     month: 'long',
                     day: 'numeric'
@@ -267,11 +310,6 @@ table.addEventListener("change", function (event) {
             } else if (s.options[s.selectedIndex].value === "Medium" || s.options[s.selectedIndex].value === "Hard") {
                 reviewCounter += 1
                 reviewContent.value = reviewCounter
-            } else {
-                // If there's no option value
-                statusIcon.classList.remove("fa-hourglass-half", "fa-hourglass-end")
-                statusIcon.classList.add("fa-hourglass")
-                day_td.textContent = ''
             }
         }) 
     }
@@ -285,6 +323,26 @@ deleteButton.forEach(d => {
     d.addEventListener("click", function () {
         let row = this.closest("tr")
         row.remove()
+        pendingCounter -= 1
+        pendingContent.value = pendingCounter
     })
 })
 
+
+
+// Adding the data to the form
+let submitToTheForm = document.querySelectorAll(".submit")
+
+submitToTheForm.forEach(s => {
+    addDataToSubmitForm(s)
+})
+
+let cancelDatabaseForm = document.getElementById("hide")
+cancelDatabaseForm.addEventListener("click", function () {
+    form.style.display = 'none'
+    container.style.opacity = '1'
+})
+
+
+
+// Searching the database
