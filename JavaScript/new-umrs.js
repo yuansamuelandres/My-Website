@@ -134,6 +134,7 @@ addEntry.addEventListener('click', function () {
     cell1i2.classList.add("fa-solid", "fa-trash")
     cell1Button2.appendChild(cell1i2)
     cell1.appendChild(cell1Button2)
+    // Event delegation alternative
     deleteEntry(cell1Button2)
 
     let cell1Button3 = document.createElement("button")
@@ -142,6 +143,8 @@ addEntry.addEventListener('click', function () {
     cell1i3.classList.add("fa-solid", "fa-paper-plane")
     cell1Button3.appendChild(cell1i3)
     cell1.appendChild(cell1Button3)
+    // Event delegation alternative
+    addDataToSubmitForm(cell1Button3)
     
     cell1.appendChild(firstSpan)
 
