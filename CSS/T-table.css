@@ -15,6 +15,7 @@
 
 body {
     background-color: black;
+    direction: rtl;
 }
 
 h1 {
@@ -42,22 +43,16 @@ img {
     /* background-color: gray; */
     border-radius: 1rem;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 1rem;
 }
 
-figure:nth-of-type(1) img {
-    border-radius: 1rem 0 0 0;
+figure img {
+    border-radius: 1rem;
 }
 
-figure:nth-of-type(2) img {
-    border-radius: 0 1rem 0 0;
-}
-
-figure:nth-of-type(19) img {
-    border-radius: 0 0 0 1rem;
-}
-
-figure:nth-of-type(20) img {
-    border-radius: 0 0 1rem 0;
+@media (width >= 700px) {
+    #gallery {
+        grid-template-columns: 1fr 1fr;
+    }
 }
