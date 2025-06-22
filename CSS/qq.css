@@ -1,0 +1,310 @@
+/* In the name of Allah */
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-dark: hsl(248 100% 7%);
+    --bg: hsl(239 100% 10%);
+    --bg-light: hsl(228 97% 13%);
+
+    --primary: hsl(221 100% 81%);
+    --secondary: hsl(46 100% 31%);
+
+    --border: hsl(224 90% 36%);
+    --border-muted: hsl(236 100% 28%);
+    --highlight: hsl(223 71% 48%);
+
+    --text: hsl(0, 0%, 95%);
+    --text-muted: hsl(0, 0%, 70%);
+
+    --failure: hsl(7 100% 66%);
+    --failure-prominent: hsl(7 100% 46%);
+    --warning: hsl(53 100% 21%);
+    --success: hsl(162 100% 22%);
+    --success-porminent: hsl(162 100% 42%);
+    --info: hsl(217 100% 70%);
+
+    --border-radius: 0.75rem;
+    --outline: 0.125rem;
+    --transition-duration: 0.25s;
+}
+
+
+
+/***** General Styling *****/
+body {
+    background-color: var(--bg-dark);
+    font-family: "Poppins", sans-serif;
+    font-size: medium;
+    font-weight: bold;
+    color: var(--text);
+}
+
+.header,
+.main,
+.database {
+    max-width: 90%;
+    margin-inline: auto;
+}
+
+ul {
+    list-style-type: none;
+    padding-inline-start: 0;
+    display: inline-flex;
+    gap: 2rem;
+    justify-content: end;
+    align-items: center;
+}
+
+a {
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: var(--outline) solid transparent;
+    transition-duration: var(--transition-duration);
+}
+a:hover {
+    border-bottom: var(--outline) solid var(--text);
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: var(--border-radius);
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    font-size: medium;
+    transition-duration: var(--transition-duration);
+    transition-property: background-color, color;
+}
+
+button[class = "generate"]:hover {
+    background-color: var(--bg-dark);
+    color: var(--primary);
+    outline: var(--border) solid var(--outline);
+}
+button[class = "generate"]:active {
+    background-color: var(--bg-light);
+}
+
+.mobile {
+    display: none;
+}
+@media (width <= 820px) {
+    .desktop {
+        display: none;
+    }
+    .mobile {
+        display: block;
+    }
+}
+
+
+/******************** Header ********************/
+.header {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+
+    i {
+        padding-inline: 1rem;
+    }
+
+    .nav {
+        flex-grow: 1;
+        text-align: right;
+    }
+
+    i[class = "fa-solid fa-bars"] {
+        display: none;
+    }
+
+    .button {
+        width: fit-content;
+    }
+
+}
+
+.header button,
+.main button {
+    background-color: var(--primary);
+    color: var(--bg-dark);
+    padding-inline: 1rem;
+    padding-block: 0.75rem;
+}
+
+
+@media (width <= 820px) {
+    .nav,
+    .button {
+        display: none;
+    }
+
+    .logo {
+        width: 100%;
+        text-align: center;
+        padding-block: 1rem;
+        font-size: larger;
+
+        i[class = "fa-solid fa-book-open"] {
+            position: absolute;
+            left: 0.75rem;
+        }
+    }
+
+    .header i[class = "fa-solid fa-bars"] {
+        display: block;
+        position: absolute;
+        right: 0.75rem;
+    }
+
+    hr {
+        display: none;
+    }
+}
+
+
+
+/******************** Main ********************/
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1,
+    p {
+        margin-block-end: 0.25rem;
+    }
+
+    p {
+        text-align: center;
+        line-height: 1.75rem;
+        font-weight: lighter;
+        color: var(--text-muted);
+    }
+
+    a {
+        text-decoration: underline;
+        transition-duration: var(--transition-duration);
+        cursor: pointer;
+    }
+    a:hover {
+        text-decoration: none;
+    }
+
+    input {
+        margin-block: 1.5rem;
+        border: none;
+        width: 40%;
+        place-self: start;
+        padding: 0.75rem;
+        border-radius: var(--border-radius);
+        background-color: var(--bg);
+        color: var(--text-muted);
+        outline: var(--border-muted) solid var(--outline);
+        font-size: large;
+        font-weight: bold;
+    }
+    input::placeholder {
+        color: var(--text-muted);
+        opacity: 1;
+        font-weight: lighter;
+    }
+    input:focus {
+        outline-color: var(--highlight);
+    }
+    input:invalid:not(:placeholder-shown):focus {
+        outline-color: var(--failure);
+    }
+    input:valid:not(:placeholder-shown):focus {
+        outline-color: var(--success);
+    }
+    input:not(:placeholder-shown):user-invalid {
+        outline-color: var(--failure-prominent);
+    }
+    input:not(:placeholder-shown):user-valid {
+        outline-color: var(--success-porminent);
+    }
+}
+
+
+@media (width <= 820px) {
+    .main {
+        h1 {
+            display: none;
+        }
+
+        input {
+            width: 100%;
+            padding: 1rem;
+        }
+
+        button[class = "generate"] {
+            position: absolute;
+            bottom: 15%;
+            width: 90%;
+        }
+    }
+}
+
+
+
+/******************** Databases Section ********************/
+.database {
+    .database-actions {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    button {
+        padding-block: 0.6rem;
+        padding-inline: 2.75rem;
+        background-color: var(--secondary);
+        color: var(--bg-dark);
+    }
+
+    button[class = "show-database"] {
+        background-color: var(--info);
+        /* color: var(--secondary); */
+    }
+
+    button:hover {
+        background-color: var(--bg-light);
+        color: var(--secondary);
+        outline: var(--secondary) solid var(--outline);
+    }
+    button:active {
+        background-color: var(--info);
+        color: var(--bg-dark);
+        outline: none;
+    }
+}
+
+
+@media (width <= 820px) {
+    .database {
+        h3 {
+            display: none;
+        }
+
+        button[class = "check-database"] {
+            position: absolute;
+            bottom: 8%;
+            width: 90%;
+            padding-inline: 1rem;
+            padding-block: 0.75rem;
+        }
+
+        button[class = "show-database"] {
+            position: absolute;
+            bottom: 1%;
+            background-color: transparent;
+        }
+    }
+}

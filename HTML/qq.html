@@ -1,0 +1,56 @@
+<!-- In the name of Allah -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/qq.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <title>Quran Questions</title>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <i class="fa-solid fa-book-open"></i>Questions Generator
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="../index.html" target="_blank" title="Home Page">Home</a></li>
+                <li><a href="../about.html" target="_blank" title="About me">About</a></li>
+                <li><a href="../HTML/form.html" target="_blank" title="Contact Form">Contact</a></li>
+            </ul>
+        </div>
+        <div class="button"><button class="generate">Generate Questions</button></div>
+        <i class="fa-solid fa-bars"></i>
+    </div>
+    <hr>
+
+    <div class="main">
+        <h1>Generate Random Questions</h1>
+        <p class="desktop">Enter the number of questions you want to generate and click the button below. The component IDs will be stored in a <a>local database</a>.</p>
+        <p class="mobile">Generate random questions to challenge your knowledge and spark curiosity.</p>
+        <input
+            type="text" id="q-number" placeholder="Number of Questions"
+            pattern="^(10|[1-9])"
+            required>
+        <button class="generate">Generate Questions</button>
+    </div>
+
+    <div class="database">
+        <h3>Database Actions</h3>
+        <div class="database-actions">
+            <button class="check-database">
+                <span class="desktop">Check Database</span>
+                <span class="mobile">Check Local Storage</span>
+            </button>
+            <button class="show-database">
+                <span class="desktop">Show Database</span>
+                <span class="mobile">Show Database Contents</span>
+            </button>
+        </div>
+    </div>
+</body>
+</html>
