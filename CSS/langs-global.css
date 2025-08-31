@@ -114,6 +114,7 @@ h1.deutsch {
     grid-template-columns: 1fr;
     justify-content: center;
     align-items: center;
+    gap: 1.25rem;
     text-align: center;
 }
 
@@ -125,6 +126,14 @@ h1.deutsch {
 }
 .lectures-container > *:hover {
     box-shadow: 0 0 0.75rem 0 var(--german_flag-color-2);
+}
+
+
+@media (width >= 650px) {
+    .lectures-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
 }
 
 
