@@ -831,6 +831,13 @@ hr {
     background-position: 0;
 }
 
+.card-7 li:nth-child(4) {
+    background-image: url(../Pictures/germany-flag-xl.png);
+    background-size: cover;
+    background-position: 0;
+    color: whitesmoke;
+}
+
 .card-7 li {
     /* display: flex; */
     align-items: center;

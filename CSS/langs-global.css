@@ -7,7 +7,9 @@
 }
 
 :root {
-    --ff: "Arial";
+    --ff: "Poppins", sans-serif;
+    --german_flag-color-1: #DD0000;
+    --german_flag-color-2: #FFCC00;
 }
 
 html {
@@ -23,6 +25,7 @@ body {
     margin-inline: auto;
     margin-block: 2.5%;
     background-color: black;
+    color: silver;
 }
 
 a {
@@ -33,18 +36,18 @@ a {
         text-shadow 0.3s;
 }
 a:hover {
-    color: #F1BF00;
-    text-shadow: 0 0 1rem #AA151B;
+    text-shadow: 0 0 1rem silver;
 }
 
 /******************** Main Styling ********************/
-main {
+.container {
     max-width: 90%;
     margin-inline: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+}
+
+#welcome {
+    text-align: center;
+    border-radius: 1rem;
 }
 
 #flag {
@@ -55,24 +58,76 @@ main {
         0 0 1.5rem 0 #AA151B;
 }
 
-h1 {
+h1.espanol {
+    text-align: center;
     background-image: url(../Pictures/spain-flag-xl.png);
+    background-size: contain;
+    background-position: 0%;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h1.deutsch {
+    text-align: center;
+    background-image: url(../Pictures/germany-flag-xl.png);
     background-size: cover;
     background-position: 0;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.container {
-    max-width: 100%;
 
-    ol {
-        list-style-type: none;
-        display: grid;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-        padding: 0;
-        text-align: center;
+
+.courses {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.courses > * {
+    border-radius: 1rem;
+    transition: box-shadow 0.3s;
+    text-align: center;
+    box-shadow: 0 0 0.75rem 0 var(--german_flag-color-1);
+}
+.courses > *:hover {
+    box-shadow: 0 0 1rem 0 var(--german_flag-color-2);
+}
+
+
+@media (width >= 650px) {
+    .courses {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
     }
 }
+
+
+
+/*************** Lectures Container ***************/
+.lectures-container {
+    max-width: 90%;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.lectures-container > * {
+    padding: 1rem;
+    border-radius: 1rem;
+    transition: box-shadow 0.3s;
+    box-shadow: 0 0 0.75rem 0 var(--german_flag-color-1);
+}
+.lectures-container > *:hover {
+    box-shadow: 0 0 0.75rem 0 var(--german_flag-color-2);
+}
+
+
+/* div {
+    border: 1px solid red;
+} */
